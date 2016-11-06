@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="mainApp">
+    <head>
+        <title>Jrello</title>
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <script src="/bower_components/angular/angular.js"></script>
+        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="/javascripts/app.js"></script>
+        <link href="stylesheets/freelancer.css" rel="stylesheet">
+        <!-- <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script> -->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
+
+    </head>
+    <body ng-controller="signupController as sm">
+
+        <!-- Navigation -->
+        <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="#page-top">StartUp Biz</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="/signup">SignUp/Login</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#about">About</a>
+                        </li>
+                        <li class="page-scroll">
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+
+        <div class="main">
+            <h3 class="text-center">Sign Up form</h3>
+            <form class="signup" ng-submit="sm.login()" role="form">
+              <div class="input">
+                <label for="full-name">Full Name</label>
+                <input type="text" ng-model="sm.user.name" id="full-name" name="full-name" autocorrect="off" autocapitalize="words" maxlength="32">
+              </div>
+              <div class="input">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" ng-model="sm.user.email" name="email" autocorrect="off" autocapitalize="off" maxlength="64">
+              </div>
+              <div class="input">
+                <label for="phonenumber">Phone Number</label>
+                <input type="phonenumber" ng-model="sm.user.phonenumber" id="phonenumber" name="phonenumber" autocorrect="off" autocapitalize="off" maxlength="32">
+              </div>
+              <div class="input clearfix">
+                <label for="password">Password</label>
+                <input type="text" id="password" name="password" ng-model="sm.user.password" maxlength="12" autocorrect="off" autocapitalize="off">
+              </div>
+              <input type="submit" id="submit" name="submit" value="Create Account">
+            </form>
+        </div>
+
+    </body>
+</html>
