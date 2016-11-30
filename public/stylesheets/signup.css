@@ -38,9 +38,9 @@ html{
 }
 
 .testbox {
-  margin: 70px auto;
+  margin: 50px auto;
   width: 343px;
-  height: 700px;
+  height: 500px;
   -webkit-border-radius: 8px/7px;
   -moz-border-radius: 8px/7px;
   border-radius: 8px/7px;
@@ -108,7 +108,7 @@ hr{
   opacity: 0.3;
 }
 
-input[type=text],input[type=password],input[type=Conformpassword]{
+input[type=text],input[type=password]{
   width: 200px;
   height: 39px;
   -webkit-border-radius: 0px 4px 4px 0px/5px 5px 4px 4px;
@@ -124,13 +124,13 @@ input[type=text],input[type=password],input[type=Conformpassword]{
   padding-left: 10px;
 }
 
-input[type=Conformpassword]{
+input[type=password]{
   margin-bottom: 25px;
 }
 
 #icon {
   display: inline-block;
-  width: 40px;
+  width: 30px;
   background-color: #3a57af;
   padding: 8px 0px 8px 15px;
   margin-left: 15px;

@@ -12,8 +12,18 @@ router.get('/signup', function(req, res, next) {
 
 
 
-router.get('/vijay',function(req,res){
-    res.send("hello world");
+
+
+router.get('/dashboard',function(req,res){
+    res.render("dashboard");
 });
+
+router.get('/acquisition',function(req,res){
+    res.render("acquisition");
+});
+router.get('/prediction',function(req,res){
+    res.render("prediction");
+});
+
 
 module.exports = router;

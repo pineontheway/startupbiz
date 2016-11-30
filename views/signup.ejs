@@ -8,7 +8,9 @@
         <script src="/bower_components/jquery/dist/jquery.min.js"></script>
         <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="/javascripts/app.js"></script>
-        <link href="stylesheets/freelancer.css" rel="stylesheet">
+        <!-- <link href="stylesheets/signup.css" rel="stylesheet"> -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+        <link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
         <!-- <script src="/node_modules/angular-ui-router/release/angular-ui-router.js"></script> -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>
 
@@ -49,27 +51,43 @@
         </nav>
 
 
+
+
         <div class="main">
-            <h3 class="text-center">Sign Up form</h3>
-            <form class="signup" ng-submit="sm.login()" role="form">
-              <div class="input">
-                <label for="full-name">Full Name</label>
-                <input type="text" ng-model="sm.user.name" id="full-name" name="full-name" autocorrect="off" autocapitalize="words" maxlength="32">
-              </div>
-              <div class="input">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" ng-model="sm.user.email" name="email" autocorrect="off" autocapitalize="off" maxlength="64">
-              </div>
-              <div class="input">
-                <label for="phonenumber">Phone Number</label>
-                <input type="phonenumber" ng-model="sm.user.phonenumber" id="phonenumber" name="phonenumber" autocorrect="off" autocapitalize="off" maxlength="32">
-              </div>
-              <div class="input clearfix">
-                <label for="password">Password</label>
-                <input type="text" id="password" name="password" ng-model="sm.user.password" maxlength="12" autocorrect="off" autocapitalize="off">
-              </div>
-              <input type="submit" id="submit" name="submit" value="Create Account">
-            </form>
+            <div class="testbox">
+              <h1>Registration</h1>
+
+
+
+              <form name="form" ng-submit="sm.login()" role="form">
+                  <hr>
+                <div class="accounttype">
+                  <input type="radio" value="None" ng-model="sm.user.entrepreneur" id="radioOne" name="account" checked/>
+                  <label for="radioOne" class="radio" chec>Entrepreneur</label>
+                  <input type="radio" value="None"  ng-model="sm.user.investor" id="radioTwo" name="account" />
+                  <label for="radioTwo" class="radio">Investor</label>
+                </div>
+              <hr>
+              <label id="icon" for="name"><i class="icon-user"></i></label>
+              <input type="text" name="name" id="name" ng-model="sm.user.name" placeholder="Name" required/>
+              <label id="icon" for="name"><i class="icon-user"></i></label>
+              <input type="text" name="userName" id="userName" ng-model="sm.user.userName" placeholder="UserName" required/>
+              <label id="icon" for="name"><i class="icon-envelope "></i></label>
+              <input type="text" name="email" id="email" ng-model="sm.user.email" placeholder="Email" required/>
+              <label id="icon" for="name"><i class="icon-shield"></i></label>
+              <input type="password" name="password" id="password" ng-model="sm.user.password" placeholder="Password" required/>
+              <label id="icon" for="name"><i class="icon-shield"></i></label>
+              <input type="Conformpassword" name="conformPassword" id="conformPassword" ng-model="sm.user.conformPassword" placeholder="Conform Password" required/>
+              <div class="gender">
+                <input type="radio" value="None" ng-model="sm.user.male" id="male" name="gender" checked/>
+                <label for="male" class="radio" chec>Male</label>
+                <input type="radio" value="None" ng-model="sm.user.female" id="female" name="gender" />
+                <label for="female" class="radio">Female</label>
+               </d iv>
+               <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
+              <button type="submit" class="btn btn-primary">Register</button>
+              </form>
+            </div>
         </div>
 
     </body>

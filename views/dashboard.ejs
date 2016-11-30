@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>StartUp Biz</title>
+
+    <!-- Bootstrap Core CSS -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Theme CSS -->
+
+    <!-- Custom Fonts -->
+    <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+    <link href="stylesheets/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="stylesheets/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        <nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" style=" color:white;">Startup Biz</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+
+
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+
+
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation">
+                <div class="sidebar-nav navbar-collapse">
+                    <ul class="nav" style="padding-top:60px;" id="side-menu">
+
+                        <li>
+                            <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i> Companies</a>
+                        </li>
+                         <li>
+                            <a href="investment.html"><i class="fa fa-table fa-fw"></i> Investments</a>
+                        </li>
+                         <li>
+                            <a href="/acquisition"><i class="fa fa-table fa-fw"></i> Acquisitions</a>
+                        </li>
+                         <li>
+                            <a href="funding.html"><i class="fa fa-table fa-fw"></i> Funding Rounds</a>
+                        </li>
+                        <li>
+                            <a href="people.html"><i class="fa fa-table fa-fw"></i> People</a>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="page-header">Dashboard</h3>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 2015 StartUp Scenario
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div id="container" style="min-width: 604px; height: 352px; max-width: 600px; margin: 0 auto"></div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Bar Chart Example
+                            <div class="pull-right">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <span class="caret"></span>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="row">
+
+                                <!-- /.col-lg-4 (nested) -->
+                                <div class="col-lg-8">
+                                    <div id="container2" style="min-width: 604px; height: 452px; max-width: 600px; margin: 0 auto"></div>
+                                </div>
+                                <!-- /.col-lg-8 (nested) -->
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Trending Startups
+                        </div>
+                        <div class="panel-body">
+                            <table class="table table-striped">
+                                <thead>
+                                  <tr>
+
+
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>Cyanogen</td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>Beme</td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>Stripe</td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>Smart All</td>
+
+                                  </tr>
+                                  <tr>
+                                    <td>AirBnB</td>
+
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bar-chart-o fa-fw"></i> Twitter Widget
+                        </div>
+                        <div class="panel-body">
+                            <a class="twitter-timeline"
+                              href="https://twitter.com/TwitterDev"
+                              data-chrome="nofooter noborders">
+                            Tweets by @CrunchBase
+                            </a>
+
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                        <!-- /.panel-heading -->
+
+                    <!-- /.panel .chat-panel -->
+                </div>
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script>
+    $(function () {
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Top Countries by Rounds 2015 YTD'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Companies',
+        colorByPoint: true,
+        data: [{
+            name: 'United States',
+            y: 7851
+        }, {
+            name: 'United Kingdom',
+            y: 810,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'India',
+            y: 771
+        }, {
+            name: 'Canada',
+            y: 388
+        }, {
+            name: 'Germany',
+            y: 265
+        }, {
+            name: 'Israel',
+            y: 236
+        }, {
+            name: 'China',
+            y: 227
+        }, {
+            name: 'France',
+            y: 203
+        }, {
+            name: 'Australia',
+            y: 149
+        }, {
+            name: 'Spain',
+            y: 144
+        }, {
+            name: 'Singapore',
+            y: 141
+        }, {
+            name: 'Netherlands',
+            y: 136
+        }, {
+            name: 'Sweden',
+            y: 126
+        }, {
+            name: 'Japan',
+            y: 105
+        }, {
+            name: 'Switzerland',
+            y: 101
+        }, {
+            name: 'Italy',
+            y: 86
+        }, {
+            name: 'Brazil',
+            y: 81
+        }, {
+            name: 'Ireland',
+            y: 77
+        }, {
+            name: 'Denmark',
+            y: 75
+        }, {
+            name: 'Finland',
+            y: 70
+        }, {
+            name: 'Indonesia',
+            y: 67
+        }, {
+            name: 'Hong Kong',
+            y: 67
+        }, {
+            name: 'South Korea',
+            y: 67
+        }, {
+            name: 'Bulgaria',
+            y: 45
+        }, {
+            name: 'Russia',
+            y: 44
+        }
+]
+    }]
+});
+});
+    </script>
+
+    <script>
+    $(function () {
+Highcharts.chart('container2', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'Top Regions by Investment 2015 YTD'
+    },
+    subtitle: {
+        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
+    },
+    xAxis: {
+        categories: ['SF Bay Area','New York City','Boston','London','Los Angeles','Seattle','Chicago','Austin','San Diego','Washington D.C.','Denver','Salt Lake City','Raleigh','Atlanta','Toronto','Dallas','Baltimore','Philadelphia','Miami','Vancouver','Detroit','Phoenix','St. Louis','Montreal','Bakersfield'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Money (millions)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' millions'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Angel',
+        data: [41311288,15765683,3320000,47302417,2513000,8080495,2005000,4300000,4902495,2378800,1400000,2500000,1597589,10750000,40000000,4904999,1700000,1000000,1141377,750000,1000000,1570750,1800000,3000000,5000000]
+    }, {
+        name: 'Seed',
+        data: [27684982912,7127720128,5722220072,3740724045,2984580107,2672872113,1122539815,988732026,1278382397,1249093300,858676291,1003287385,831537497,811208022,808564399,710470063,658296521,611015964,530412282,411969682,481637201,439835888,420497503,277357500,271957938]
+    }, {
+        name: 'Venture',
+        data: [682819821,314146953,122191793,219788758,159473573,290254394,35635000,65506062,20068790,51168081,49765104,29534233,25420604,19246000,56537307,19765191,12250000,18949622,16153160,17570346,11861556,18034957,16010000,12374470,13620000]
+    }]
+});
+});
+    </script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/javascripts/metisMenu.min.js"></script>
+
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/javascripts/sb-admin-2.js"></script>
+
+</body>
+
+
+</html>
