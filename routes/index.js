@@ -24,6 +24,11 @@ router.get('/acquisition',function(req,res){
 router.get('/prediction',function(req,res){
     res.render("prediction");
 });
-
+router.get('/investment',function(req,res){
+    res.render("investment");
+});
+router.get('/people',function(req,res){
+    res.render("people");
+});
 
 module.exports = router;
