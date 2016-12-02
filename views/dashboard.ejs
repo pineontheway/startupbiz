@@ -156,7 +156,7 @@
                             <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i> Companies</a>
                         </li>
                          <li>
-                            <a href="investment.html"><i class="fa fa-table fa-fw"></i> Investments</a>
+                            <a href="investment.html"><i class="fa fa-usd fa-fw"></i> Investments</a>
                         </li>
                          <li>
                             <a href="/acquisition"><i class="fa fa-table fa-fw"></i> Acquisitions</a>
@@ -311,11 +311,19 @@
                             <i class="fa fa-bar-chart-o fa-fw"></i> Twitter Widget
                         </div>
                         <div class="panel-body">
-                            <a class="twitter-timeline"
-                              href="https://twitter.com/TwitterDev"
-                              data-chrome="nofooter noborders">
-                            Tweets by @CrunchBase
-                            </a>
+                            <div class="tw-feed">
+                                <a class="twitter-timeline" href="https://twitter.com/crunchbase‎"
+
+                                   data-link-color="#ccc"
+                                   background="#333"
+                                   border-radius="none"
+                                   data-chrome="nofooter noborders"
+                                   data-widget-id="413723523169787904"
+                                   data-screen-name="crunchbase" data-show-replies="false"
+                                   data-tweet-limit="4"
+                                   width="400"
+                                   >@Twitter Feed</a>
+                            </div>
 
                         </div>
                         <!-- /.panel-body -->
@@ -516,6 +524,10 @@ Highcharts.chart('container2', {
     }]
 });
 });
+    </script>
+
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
     </script>
 
     <!-- Bootstrap Core JavaScript -->
