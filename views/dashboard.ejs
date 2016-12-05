@@ -345,6 +345,172 @@
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <script>
+=======
+
+    <script>
+    angular.module('myModule', [])
+    .controller('myController', function($scope,$http) {
+        $http.get("/getData")
+     .then(function(response) {
+         console.log(response.data);
+         $scope.myWelcome = response.data;
+         Highcharts.chart('container', {
+             chart: {
+                 plotBackgroundColor: null,
+                 plotBorderWidth: null,
+                 plotShadow: false,
+                 type: 'pie'
+             },
+             title: {
+                 text: 'Top Countries by Rounds 2015 YTD'
+             },
+             tooltip: {
+                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+             },
+             plotOptions: {
+                 pie: {
+                     allowPointSelect: true,
+                     cursor: 'pointer',
+                     dataLabels: {
+                         enabled: true,
+                         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                         style: {
+                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                         }
+                     }
+                 }
+             },
+             series: [{
+                 name: 'Companies',
+                 colorByPoint: true,
+                 data: $scope.myWelcome
+             }]
+         });
+     });
+     });
+
+<!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+    <script>
+    var data = [];
+    for (var i = 0; i < <%=top_countries%>.length; i++) {
+                data.push(JSON.stringify(<%=top_countries%>).[i]);
+    };
+   alert(data);
+>>>>>>> master
+    $(function () {
+Highcharts.chart('container', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Top Countries by Rounds 2015 YTD'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                style: {
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                }
+            }
+        }
+    },
+    series: [{
+        name: 'Companies',
+        colorByPoint: true,
+        data: [{
+            name: 'United States',
+            y: 7851
+        }, {
+            name: 'United Kingdom',
+            y: 810,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'India',
+            y: 771
+        }, {
+            name: 'Canada',
+            y: 388
+        }, {
+            name: 'Germany',
+            y: 265
+        }, {
+            name: 'Israel',
+            y: 236
+        }, {
+            name: 'China',
+            y: 227
+        }, {
+            name: 'France',
+            y: 203
+        }, {
+            name: 'Australia',
+            y: 149
+        }, {
+            name: 'Spain',
+            y: 144
+        }, {
+            name: 'Singapore',
+            y: 141
+        }, {
+            name: 'Netherlands',
+            y: 136
+        }, {
+            name: 'Sweden',
+            y: 126
+        }, {
+            name: 'Japan',
+            y: 105
+        }, {
+            name: 'Switzerland',
+            y: 101
+        }, {
+            name: 'Italy',
+            y: 86
+        }, {
+            name: 'Brazil',
+            y: 81
+        }, {
+            name: 'Ireland',
+            y: 77
+        }, {
+            name: 'Denmark',
+            y: 75
+        }, {
+            name: 'Finland',
+            y: 70
+        }, {
+            name: 'Indonesia',
+            y: 67
+        }, {
+            name: 'Hong Kong',
+            y: 67
+        }, {
+            name: 'South Korea',
+            y: 67
+        }, {
+            name: 'Bulgaria',
+            y: 45
+        }, {
+            name: 'Russia',
+            y: 44
+        }
+]
+    }]
+=======
 
     <script>
 angular.module('myModule', [])
@@ -385,9 +551,12 @@ $http.get("/getData")
          data: $scope.myWelcome
      }]
  });
+>>>>>>> master
 });
 });
+>>>>>>> a84651c2921981cc64fc2326ada59f7faf827883
     </script>
+
 
     <script>
     $(function () {
