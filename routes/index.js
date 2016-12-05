@@ -4,6 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
     req.getConnection(function(err,connection){
+
        var query = connection.query('SELECT * FROM countries_by_rounds',function(err,rows)
        {
            if(err)
@@ -13,11 +14,13 @@ router.get('/', function(req, res, next) {
     });
   res.render('index', { title: 'Express' });
 });
+
 router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
 
 router.get('/getData', function(req, res, next) {
+    console.log("1234343431223");
     var top_countries=[];
     req.getConnection(function(err,connection){
     var query = connection.query('SELECT Countries, Rounds FROM countries_by_rounds WHERE Year="2015"',function(err,rows)
@@ -37,7 +40,6 @@ router.get('/getData', function(req, res, next) {
 
 });
 
-var top_countries = [];
 router.get('/dashboard',function(req,res){
     res.render("dashboard");
 });
@@ -55,10 +57,4 @@ router.get('/people',function(req,res){
     res.render("people");
 });
 
-router.get('/funding',function(req,res){
-    res.render("funding");
-});
-router.get('/startup',function(req,res){
-    res.render("startup");
-});
 module.exports = router;
