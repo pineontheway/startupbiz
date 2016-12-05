@@ -341,6 +341,18 @@ $(function () {
                     [1, '#000022']
                 ]
             },
+            plotOptions: {
+                series: {
+                    cursor: 'pointer',
+                    point: {
+                        events: {
+                            click: function () {
+                                alert('You selected: ' + this.code);
+                            }
+                        }
+                    }
+                }
+            },
 
             series: [{
                 animation: {
