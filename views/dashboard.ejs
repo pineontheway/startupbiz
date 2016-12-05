@@ -54,7 +54,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/startup" style=" color:white;">Startup Biz</a>
+                <a class="navbar-brand" href="/" style=" color:white;">Startup Biz</a>
             </div>
             <!-- /.navbar-header -->
 
@@ -130,7 +130,7 @@
                 </li>
                 <!-- /.dropdown -->
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
@@ -344,13 +344,8 @@
     <!-- jQuery -->
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
-    <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script>
-    var data = [];
-    for (var i = 0; i < <%=top_countries%>.length; i++) {
-                data.push(JSON.stringify(<%=top_countries%>).[i]); 
-    };
-   alert(data);
     $(function () {
 Highcharts.chart('container', {
     chart: {
@@ -381,7 +376,85 @@ Highcharts.chart('container', {
     series: [{
         name: 'Companies',
         colorByPoint: true,
-        data: data
+        data: [{
+            name: 'United States',
+            y: 7851
+        }, {
+            name: 'United Kingdom',
+            y: 810,
+            sliced: true,
+            selected: true
+        }, {
+            name: 'India',
+            y: 771
+        }, {
+            name: 'Canada',
+            y: 388
+        }, {
+            name: 'Germany',
+            y: 265
+        }, {
+            name: 'Israel',
+            y: 236
+        }, {
+            name: 'China',
+            y: 227
+        }, {
+            name: 'France',
+            y: 203
+        }, {
+            name: 'Australia',
+            y: 149
+        }, {
+            name: 'Spain',
+            y: 144
+        }, {
+            name: 'Singapore',
+            y: 141
+        }, {
+            name: 'Netherlands',
+            y: 136
+        }, {
+            name: 'Sweden',
+            y: 126
+        }, {
+            name: 'Japan',
+            y: 105
+        }, {
+            name: 'Switzerland',
+            y: 101
+        }, {
+            name: 'Italy',
+            y: 86
+        }, {
+            name: 'Brazil',
+            y: 81
+        }, {
+            name: 'Ireland',
+            y: 77
+        }, {
+            name: 'Denmark',
+            y: 75
+        }, {
+            name: 'Finland',
+            y: 70
+        }, {
+            name: 'Indonesia',
+            y: 67
+        }, {
+            name: 'Hong Kong',
+            y: 67
+        }, {
+            name: 'South Korea',
+            y: 67
+        }, {
+            name: 'Bulgaria',
+            y: 45
+        }, {
+            name: 'Russia',
+            y: 44
+        }
+]
     }]
 });
 });
