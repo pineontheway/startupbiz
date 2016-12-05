@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>StartUp Biz</title>
+
+    <!-- Bootstrap Core CSS -->
+    <script src="/bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- Theme CSS -->
+
+    <!-- Custom Fonts -->
+    <link href="/bower_components/components-font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+
+    <link href="stylesheets/metisMenu.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="stylesheets/sb-admin-2.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="stylesheets/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+
+<body>
+
+    <div id="wrapper" >
+
+        <!-- Navigation -->
+        <nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/startup" style=" color:white;">Startup Biz</a>
+            </div>
+            <!-- /.navbar-header -->
+
+            <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+
+
+                    <!-- /.dropdown-messages -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+
+
+                    <!-- /.dropdown-tasks -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+
+                    <ul class="dropdown-menu dropdown-alerts">
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-comment fa-fw"></i> New Comment
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                    <span class="pull-right text-muted small">12 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-tasks fa-fw"></i> New Task
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                    <span class="pull-right text-muted small">4 minutes ago</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="divider"></li>
+                        <li>
+                            <a class="text-center" href="#">
+                                <strong>See All Alerts</strong>
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-alerts -->
+                </li>
+                <!-- /.dropdown -->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white">
+                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        </li>
+                    </ul>
+                    <!-- /.dropdown-user -->
+                </li>
+                <!-- /.dropdown -->
+            </ul>
+            <!-- /.navbar-top-links -->
+
+            <div class="navbar-default sidebar" role="navigation" >
+                <div class="sidebar-nav navbar-collapse" >
+                    <ul class="nav" style="padding-top:60px;" id="side-menu" >
+
+                        <li style="color: white">
+                            <a href="/dashboard"><i class="fa fa-industry fa-fw" ></i> Companies</a>
+                        </li>
+                         <li>
+                            <a href="/investment"><i class="fa fa-user-o fa-fw"></i> Investments</a>
+                        </li>
+                         <li>
+                            <a href="/acquisition"><i class="fa fa-random fa-fw"></i> Acquisitions</a>
+                        </li>
+                         <li>
+                            <a href="/funding"><i class="fa fa-usd fa-fw"></i> Funding Rounds</a>
+                        </li>
+                        <li>
+                            <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
+                        </li>
+
+
+
+
+
+                    </ul>
+                </div>
+                <!-- /.sidebar-collapse -->
+            </div>
+            <!-- /.navbar-static-side -->
+        </nav>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="page-header" style="">Analysis of Acquisitions </h4>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <div id="container" style="height: 500px; min-width: 450px; max-width: 800px; margin: 0 auto"></div>
+                    <!-- /.panel -->
+
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+
+                        <!-- /.panel-heading -->
+
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-8 -->
+                <div class="col-lg-6">
+                    <h3>Featured Acquisitions</h3>
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Company</th>
+                            <th>Amount</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>SquareTrade</td>
+                            <td>$1.4B</td>
+
+                          </tr>
+                          <tr>
+                            <td>Beme</td>
+                            <td>$25M</td>
+
+                          </tr>
+                          <tr>
+                            <td>Valtech Cardio</td>
+                            <td>$600M</td>
+
+                          </tr>
+                          <tr>
+                            <td>PersonalizationMall.com</td>
+                            <td>$190M</td>
+
+                          </tr>
+                          <tr>
+                            <td>Chase Pharmaceuticals</td>
+                            <td>$125M</td>
+
+                          </tr>
+                          <tr>
+                            <td>EndoChoice</td>
+                            <td>$210M</td>
+
+                          </tr>
+
+                          <tr>
+                            <td>Automation Engineering</td>
+                            <td>$35M</td>
+
+                          </tr>
+                          <tr>
+                            <td>Applied Micro Circuits</td>
+                            <td>$688M</td>
+
+                          </tr>
+                        </tbody>
+                    </table>
+                </div>
+                    <!-- /.panel -->
+
+                    <!-- /.panel -->
+
+                        <!-- /.panel-heading -->
+
+                        <!-- /.panel-body -->
+
+                        <!-- /.panel-footer -->
+
+            </div>
+
+                    <!-- /.panel .chat-panel -->
+                </div>
+
+                <!-- /.col-lg-4 -->
+            </div>
+            <!-- /.row -->
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+    <!-- jQuery -->
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="/javascripts/metisMenu.min.js"></script>
+
+
+
+    <!-- Custom Theme JavaScript -->
+    <script src="/javascripts/sb-admin-2.js"></script>
+
+
+    <!-- Maps script-->
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+<script>
+$(function () {
+
+
+        // Instanciate the map
+        Highcharts.mapChart('container', {
+
+            chart: {
+                borderWidth: 1
+            },
+
+            title: {
+                text: 'US Startups acquisition density'
+            },
+
+            legend: {
+                layout: 'horizontal',
+                borderWidth: 0,
+                backgroundColor: 'rgba(255,255,255,0.85)',
+                floating: true,
+                verticalAlign: 'top',
+                y: 25
+            },
+
+            mapNavigation: {
+                enabled: true
+            },
+
+            colorAxis: {
+                min: 1,
+                type: 'logarithmic',
+                minColor: '#EEEEFF',
+                maxColor: '#000022',
+                stops: [
+                    [0, '#EFEFFF'],
+                    [0.67, '#4444FF'],
+                    [1, '#000022']
+                ]
+            },
+
+            series: [{
+                animation: {
+                    duration: 1000
+                },
+                data: [
+    {
+        "value": 36,
+        "code": "NJ"
+    },
+    {
+        "value": 2,
+        "code": "RI"
+    },
+    {
+        "value": 84,
+        "code": "MA"
+    },
+    {
+        "value": 19,
+        "code": "CT"
+    },
+    {
+        "value": 23,
+        "code": "MD"
+    },
+    {
+        "value": 137,
+        "code": "NY"
+    },
+    {
+        "value": 3,
+        "code": "DE"
+    },
+    {
+        "value": 51,
+        "code": "FL"
+    },
+    {
+        "value": 35,
+        "code": "OH"
+    },
+    {
+        "value": 62,
+        "code": "PA"
+    },
+    {
+        "value": 77,
+        "code": "IL"
+    },
+    {
+        "value": 445,
+        "code": "CA"
+    },
+    {
+        "value": 1,
+        "code": "HI"
+    },
+    {
+        "value": 45,
+        "code": "VA"
+    },
+    {
+        "value": 29,
+        "code": "MI"
+    },
+    {
+        "value": 20,
+        "code": "IN"
+    },
+    {
+        "value": 31,
+        "code": "NC"
+    },
+    {
+        "value": 43,
+        "code": "GA"
+    },
+    {
+        "value": 18,
+        "code": "TN"
+    },
+    {
+        "value": 7,
+        "code": "NH"
+    },
+    {
+        "value": 12,
+        "code": "SC"
+    },
+    {
+        "value": 5,
+        "code": "LA"
+    },
+    {
+        "value": 6,
+        "code": "KY"
+    },
+    {
+        "value": 21,
+        "code": "WI"
+    },
+    {
+        "value": 40,
+        "code": "WA"
+    },
+    {
+        "value": 7,
+        "code": "AL"
+    },
+    {
+        "value": 11,
+        "code": "MO"
+    },
+    {
+        "value": 83,
+        "code": "TX"
+    },
+    {
+        "value": 1,
+        "code": "WV"
+    },
+    {
+        "value": 2,
+        "code": "VT"
+    },
+    {
+        "value": 29,
+        "code": "MN"
+    },
+    {
+        "value": 1,
+        "code": "MS"
+    },
+    {
+        "value": 3,
+        "code": "IA"
+    },
+    {
+        "value": 4,
+        "code": "AR"
+    },
+    {
+        "value": 3,
+        "code": "OK"
+    },
+    {
+        "value": 25,
+        "code": "AZ"
+    },
+    {
+        "value": 33,
+        "code": "CO"
+    },
+    {
+        "value": 3,
+        "code": "ME"
+    },
+    {
+        "value": 25,
+        "code": "OR"
+    },
+    {
+        "value": 14,
+        "code": "KS"
+    },
+    {
+        "value": 18,
+        "code": "UT"
+    },
+    {
+        "value": 6,
+        "code": "NE"
+    },
+    {
+        "value": 8,
+        "code": "NV"
+    },
+    {
+        "value": 3,
+        "code": "ID"
+    },
+    {
+        "value": 1,
+        "code": "NM"
+    },
+    {
+        "value": 1,
+        "code": "SD"
+    },
+    {
+        "value": 1,
+        "code": "ND"
+    },
+    {
+        "value": 1,
+        "code": "MT"
+    },
+    {
+        "value": 1,
+        "code": "WY"
+    },
+    {
+        "value": 1,
+        "code": "Ak"
+    }
+],
+                mapData: Highcharts.maps['countries/us/us-all'],
+                joinBy: ['postal-code', 'code'],
+                dataLabels: {
+                    enabled: true,
+                    color: '#FFFFFF',
+                    format: '{point.code}'
+                },
+                name: 'Startup density',
+                tooltip: {
+                    pointFormat: '{point.code}: {point.value}'
+                }
+            }]
+        });
+});
+
+</script>
+ <!-- Maps script-->
+
+</body>
