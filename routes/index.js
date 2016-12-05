@@ -17,7 +17,6 @@ router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
 
-<<<<<<< HEAD
 router.get('/getData', function(req, res, next) {
     var top_countries=[];
     req.getConnection(function(err,connection){
@@ -38,9 +37,7 @@ router.get('/getData', function(req, res, next) {
 
 });
 
-=======
 var top_countries = [];
->>>>>>> a84651c2921981cc64fc2326ada59f7faf827883
 router.get('/dashboard',function(req,res){
     res.render("dashboard");
 });
