@@ -1,33 +1,35 @@
 {
-    "name": "startupbiz",
-    "version": "0.0.0",
-    "private": true,
-    "scripts": {
-        "start": "nodemon ./bin/www"
-    },
-    "dependencies": {
-        "bcryptjs": "*",
-        "connect-flash": "*",
-        "express-messages": "*",
-        "express-session": "*",
-        "express-validator": "*",
-        "mongodb": "*",
-        "mongoose": "*",
-        "passport": "*",
-        "passport-http": "*",
-        "passport-local": "*",
-        "body-parser": "~1.15.1",
-        "cookie-parser": "~1.4.3",
-        "debug": "~2.2.0",
-        "ejs": "~2.4.1",
-        "express": "~4.13.4",
-        "morgan": "~1.7.0",
-        "nodemon": "^1.11.0",
-        "serve-favicon": "~2.3.0"
-    },
-    "description": "main project 295B",
-    "main": "app.js",
-    "devDependencies": {},
-    "author": "",
-    "license": "ISC"
+  "name": "startupbiz",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "~1.15.1",
+    "connect-flash": "*",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "ejs": "~2.4.1",
+    "express": "~4.13.4",
+    "express-messages": "*",
+    "express-myconnection": "^1.0.4",
+    "express-session": "*",
+    "express-validator": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "morgan": "~1.7.0",
+    "mysql": "^2.12.0",
+    "nodemon": "^1.11.0",
+    "passport": "*",
+    "passport-http": "*",
+    "passport-local": "*",
+    "serve-favicon": "~2.3.0"
+  },
+  "description": "main project 295B",
+  "main": "app.js",
+  "devDependencies": {},
+  "author": "",
+  "license": "ISC"
 }

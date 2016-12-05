@@ -16,6 +16,8 @@ var mongo = require('mongodb');
 // mongoose.connect('mongodb://localhost:27017/loginapp');
 // var db = mongoose.connection;
 
+var mysql      = require('mysql');
+var connection  = require('express-myconnection');
 
 
 
@@ -38,6 +40,15 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/bower_components',express.static(path.join(__dirname, 'bower_components')));
 app.use('/node_modules',express.static(path.join(__dirname, 'node_modules')));
+app.use(
+        connection(mysql,{
+            host    :'localhost',
+            user    :'root',
+            password:'root',
+            database:'startup'
+        }, 'request')
+);
+
 
 //express session
 
