@@ -20,12 +20,17 @@ router.get('/signup', function(req, res, next) {
 });
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 
 
 =======
 router.get('/getData', function(req, res, next) {
+=======
+router.get('/getData', function(req, res, next) {
+    console.log("1234343431223");
+>>>>>>> master
     var top_countries=[];
     req.getConnection(function(err,connection){
     var query = connection.query('SELECT Countries, Rounds FROM countries_by_rounds WHERE Year="2015"',function(err,rows)
@@ -45,7 +50,10 @@ router.get('/getData', function(req, res, next) {
 
 });
 
+<<<<<<< HEAD
 var top_countries = [];
+>>>>>>> master
+=======
 >>>>>>> master
 router.get('/dashboard',function(req,res){
     res.render("dashboard");

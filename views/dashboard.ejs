@@ -346,6 +346,7 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
     <script>
 =======
 
@@ -509,6 +510,48 @@ Highcharts.chart('container', {
         }
 ]
     }]
+=======
+
+    <script>
+angular.module('myModule', [])
+.controller('myController', function($scope,$http) {
+$http.get("/getData")
+.then(function(response) {
+ console.log(response.data);
+ $scope.myWelcome = response.data;
+ Highcharts.chart('container', {
+     chart: {
+         plotBackgroundColor: null,
+         plotBorderWidth: null,
+         plotShadow: false,
+         type: 'pie'
+     },
+     title: {
+         text: 'Top Countries by Rounds 2015 YTD'
+     },
+     tooltip: {
+         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+     },
+     plotOptions: {
+         pie: {
+             allowPointSelect: true,
+             cursor: 'pointer',
+             dataLabels: {
+                 enabled: true,
+                 format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                 style: {
+                     color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                 }
+             }
+         }
+     },
+     series: [{
+         name: 'Companies',
+         colorByPoint: true,
+         data: $scope.myWelcome
+     }]
+ });
+>>>>>>> master
 });
 });
 >>>>>>> a84651c2921981cc64fc2326ada59f7faf827883
