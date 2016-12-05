@@ -184,7 +184,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h4 class="page-header" style="">Analysis of Acquisitions </h4>
+                    <h4 class="page-header" style="">Analysis of Funding rounds </h4>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -193,7 +193,10 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-6">
-                    <div id="container" style="height: 500px; min-width: 450px; max-width: 800px; margin: 0 auto"></div>
+                    <div id="container"></div>
+<button id="plain">Plain</button>
+<button id="inverted">Inverted</button>
+<button id="polar">Polar</button>
                     <!-- /.panel -->
 
                     <!-- /.panel -->
@@ -207,7 +210,7 @@
                 </div>
                 <!-- /.col-lg-8 -->
                 <div class="col-lg-6">
-                    <h3>Featured Acquisitions</h3>
+                    <h3>Featured Rounds</h3>
                     <table class="table table-striped">
                         <thead>
                           <tr>
@@ -299,270 +302,73 @@
 
 
     <!-- Maps script-->
-    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-<script src="https://code.highcharts.com/maps/modules/data.js"></script>
-<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+
 <script>
 $(function () {
+    var chart = Highcharts.chart('container', {
+
+        title: {
+            text: 'Top regions by Funding Rounds'
+        },
+
+        subtitle: {
+            text: ''
+        },
+
+        xAxis: {
+            categories: ['SF Bay Area', 'Newyork', 'Boston', 'Seattle', 'Austin', 'Washington DC', 'Denver', 'Atlanta', 'Houston', 'Dallas', 'Chicago', 'San Diego']
+        },
+
+        series: [{
+            type: 'column',
+            colorByPoint: true,
+            data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+            showInLegend: false
+        }]
+
+    });
 
 
-        // Instanciate the map
-        Highcharts.mapChart('container', {
-
+    $('#plain').click(function () {
+        chart.update({
             chart: {
-                borderWidth: 1
+                inverted: false,
+                polar: false
             },
-
-            title: {
-                text: 'US Startups acquisition density'
-            },
-
-            legend: {
-                layout: 'horizontal',
-                borderWidth: 0,
-                backgroundColor: 'rgba(255,255,255,0.85)',
-                floating: true,
-                verticalAlign: 'top',
-                y: 25
-            },
-
-            mapNavigation: {
-                enabled: true
-            },
-
-            colorAxis: {
-                min: 1,
-                type: 'logarithmic',
-                minColor: '#EEEEFF',
-                maxColor: '#000022',
-                stops: [
-                    [0, '#EFEFFF'],
-                    [0.67, '#4444FF'],
-                    [1, '#000022']
-                ]
-            },
-
-            series: [{
-                animation: {
-                    duration: 1000
-                },
-                data: [
-    {
-        "value": 36,
-        "code": "NJ"
-    },
-    {
-        "value": 2,
-        "code": "RI"
-    },
-    {
-        "value": 84,
-        "code": "MA"
-    },
-    {
-        "value": 19,
-        "code": "CT"
-    },
-    {
-        "value": 23,
-        "code": "MD"
-    },
-    {
-        "value": 137,
-        "code": "NY"
-    },
-    {
-        "value": 3,
-        "code": "DE"
-    },
-    {
-        "value": 51,
-        "code": "FL"
-    },
-    {
-        "value": 35,
-        "code": "OH"
-    },
-    {
-        "value": 62,
-        "code": "PA"
-    },
-    {
-        "value": 77,
-        "code": "IL"
-    },
-    {
-        "value": 445,
-        "code": "CA"
-    },
-    {
-        "value": 1,
-        "code": "HI"
-    },
-    {
-        "value": 45,
-        "code": "VA"
-    },
-    {
-        "value": 29,
-        "code": "MI"
-    },
-    {
-        "value": 20,
-        "code": "IN"
-    },
-    {
-        "value": 31,
-        "code": "NC"
-    },
-    {
-        "value": 43,
-        "code": "GA"
-    },
-    {
-        "value": 18,
-        "code": "TN"
-    },
-    {
-        "value": 7,
-        "code": "NH"
-    },
-    {
-        "value": 12,
-        "code": "SC"
-    },
-    {
-        "value": 5,
-        "code": "LA"
-    },
-    {
-        "value": 6,
-        "code": "KY"
-    },
-    {
-        "value": 21,
-        "code": "WI"
-    },
-    {
-        "value": 40,
-        "code": "WA"
-    },
-    {
-        "value": 7,
-        "code": "AL"
-    },
-    {
-        "value": 11,
-        "code": "MO"
-    },
-    {
-        "value": 83,
-        "code": "TX"
-    },
-    {
-        "value": 1,
-        "code": "WV"
-    },
-    {
-        "value": 2,
-        "code": "VT"
-    },
-    {
-        "value": 29,
-        "code": "MN"
-    },
-    {
-        "value": 1,
-        "code": "MS"
-    },
-    {
-        "value": 3,
-        "code": "IA"
-    },
-    {
-        "value": 4,
-        "code": "AR"
-    },
-    {
-        "value": 3,
-        "code": "OK"
-    },
-    {
-        "value": 25,
-        "code": "AZ"
-    },
-    {
-        "value": 33,
-        "code": "CO"
-    },
-    {
-        "value": 3,
-        "code": "ME"
-    },
-    {
-        "value": 25,
-        "code": "OR"
-    },
-    {
-        "value": 14,
-        "code": "KS"
-    },
-    {
-        "value": 18,
-        "code": "UT"
-    },
-    {
-        "value": 6,
-        "code": "NE"
-    },
-    {
-        "value": 8,
-        "code": "NV"
-    },
-    {
-        "value": 3,
-        "code": "ID"
-    },
-    {
-        "value": 1,
-        "code": "NM"
-    },
-    {
-        "value": 1,
-        "code": "SD"
-    },
-    {
-        "value": 1,
-        "code": "ND"
-    },
-    {
-        "value": 1,
-        "code": "MT"
-    },
-    {
-        "value": 1,
-        "code": "WY"
-    },
-    {
-        "value": 1,
-        "code": "Ak"
-    }
-],
-                mapData: Highcharts.maps['countries/us/us-all'],
-                joinBy: ['postal-code', 'code'],
-                dataLabels: {
-                    enabled: true,
-                    color: '#FFFFFF',
-                    format: '{point.code}'
-                },
-                name: 'Startup density',
-                tooltip: {
-                    pointFormat: '{point.code}: {point.value}'
-                }
-            }]
+            subtitle: {
+                text: 'Plain'
+            }
         });
-});
+    });
 
+    $('#inverted').click(function () {
+        chart.update({
+            chart: {
+                inverted: true,
+                polar: false
+            },
+            subtitle: {
+                text: 'Inverted'
+            }
+        });
+    });
+
+    $('#polar').click(function () {
+        chart.update({
+            chart: {
+                inverted: false,
+                polar: true
+            },
+            subtitle: {
+                text: 'Polar'
+            }
+        });
+    });
+
+});
 </script>
  <!-- Maps script-->
 
