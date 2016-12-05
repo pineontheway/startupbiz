@@ -19,6 +19,12 @@ router.get('/signup', function(req, res, next) {
   res.render('signup');
 });
 
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> master
 router.get('/getData', function(req, res, next) {
     console.log("1234343431223");
     var top_countries=[];
