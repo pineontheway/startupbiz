@@ -49,4 +49,10 @@ router.get('/people',function(req,res){
     res.render("people");
 });
 
+router.get('/funding',function(req,res){
+    res.render("funding");
+});
+router.get('/startup',function(req,res){
+    res.render("startup");
+});
 module.exports = router;
