@@ -167,11 +167,6 @@
                             <li>
                                 <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
                             </li>
-
-
-
-
-
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
@@ -384,15 +379,9 @@
                    }]
                });
            });
-        });
-    </script>
-
-    <script>
-        angular.module('myModule', [])
-        .controller('myController', function($scope,$http) {
             $http.get("/getRegions")
             .then(function(response) {
-               Highcharts.chart('container2', {
+                Highcharts.chart('container2', {
                    chart: {
                     type: 'bar'
                 },
@@ -453,7 +442,7 @@
                     data: response.data.venture
                 }]
             });
-           });
+            });
         });
     </script>
 
@@ -467,8 +456,6 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="/javascripts/metisMenu.min.js"></script>
-
-
 
     <!-- Custom Theme JavaScript -->
     <script src="/javascripts/sb-admin-2.js"></script>
