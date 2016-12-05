@@ -41,7 +41,7 @@
 
 </head>
 
-<body>
+<body ng-app="myModule" ng-controller="myController">
 
     <div id="wrapper">
 
@@ -308,7 +308,7 @@
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-twitter fa-fw"></i> Trending News 
+                            <i class="fa fa-twitter fa-fw"></i> Trending News
                         </div>
                         <div class="panel-body">
                             <div class="tw-feed">
@@ -345,7 +345,60 @@
 
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<<<<<<< HEAD
     <script>
+=======
+
+    <script>
+    angular.module('myModule', [])
+    .controller('myController', function($scope,$http) {
+        $http.get("/getData")
+     .then(function(response) {
+         console.log(response.data);
+         $scope.myWelcome = response.data;
+         Highcharts.chart('container', {
+             chart: {
+                 plotBackgroundColor: null,
+                 plotBorderWidth: null,
+                 plotShadow: false,
+                 type: 'pie'
+             },
+             title: {
+                 text: 'Top Countries by Rounds 2015 YTD'
+             },
+             tooltip: {
+                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+             },
+             plotOptions: {
+                 pie: {
+                     allowPointSelect: true,
+                     cursor: 'pointer',
+                     dataLabels: {
+                         enabled: true,
+                         format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                         style: {
+                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                         }
+                     }
+                 }
+             },
+             series: [{
+                 name: 'Companies',
+                 colorByPoint: true,
+                 data: $scope.myWelcome
+             }]
+         });
+     });
+     });
+
+<!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+    <script>
+    var data = [];
+    for (var i = 0; i < <%=top_countries%>.length; i++) {
+                data.push(JSON.stringify(<%=top_countries%>).[i]);
+    };
+   alert(data);
+>>>>>>> master
     $(function () {
 Highcharts.chart('container', {
     chart: {
@@ -458,7 +511,9 @@ Highcharts.chart('container', {
     }]
 });
 });
+>>>>>>> a84651c2921981cc64fc2326ada59f7faf827883
     </script>
+
 
     <script>
     $(function () {
