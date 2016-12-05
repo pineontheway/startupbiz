@@ -20,8 +20,8 @@ router.get('/signup', function(req, res, next) {
 });
 
 router.get('/getData', function(req, res, next) {
-    console.log("1234343431223");
     var top_countries=[];
+    var regions=[];
     req.getConnection(function(err,connection){
     var query = connection.query('SELECT Countries, Rounds FROM countries_by_rounds WHERE Year="2015"',function(err,rows)
        {
@@ -33,12 +33,36 @@ router.get('/getData', function(req, res, next) {
                     y: rows[i].Rounds
                 });
             }
-            console.log(top_countries);
             res.send(top_countries);
         });
-        });
-
+    });
 });
+
+router.get('/getRegions', function(req, res, next) {
+    console.log("Regions::::::::::::::");
+    var top_countries=[];
+    var regions=[];
+    var angel=[];
+    var seed=[];
+    var venture=[];
+    req.getConnection(function(err,connection){
+    var query = connection.query('SELECT Regions, Angel, Venture, Seed from regions_by_investment where Year=2015 limit 10',function(err,rows)
+       {
+           if(err)
+               console.log("Error Selecting : %s ",err );
+           for (var i = 0; i < rows.length; i++) {
+                regions.push(rows[i].Regions);
+                angel.push(rows[i].Angel);
+                seed.push(rows[i].Venture);
+                venture.push(rows[i].Seed);
+            }
+            res.send({regions: regions, angel: angel, seed: seed, venture: venture});
+        });
+    });
+});
+
+
+
 
 router.get('/dashboard',function(req,res){
     res.render("dashboard");
@@ -56,10 +80,5 @@ router.get('/investment',function(req,res){
 router.get('/people',function(req,res){
     res.render("people");
 });
-router.get('/funding',function(req,res){
-    res.render("funding");
-});
-router.get('/startup',function(req,res){
-    res.render("startup");
-});
+
 module.exports = router;
