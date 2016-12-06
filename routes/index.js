@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
        {
            if(err)
                console.log("Error Selecting : %s ",err );
-            console.log(rows);
         });
     });
   res.render('index', { title: 'Express' });
@@ -76,6 +75,42 @@ router.get('/getRounds', function(req, res, next) {
             res.send({reg: reg, round: round});
         });
     });
+});
+
+router.get('/getMapInfo', function(req, res, next) {
+    var acquisition_info=[];
+    req.getConnection(function(err,connection){
+    var query = connection.query('SELECT COUNT(company_name) as count, company_state_code FROM startup.acquisitions WHERE company_country_code="USA" and acquired_year=2015 and company_state_code in ("NJ","RI","MA","CT","MD","NY","DE","FL","OH","PA","IL","CA","HI","VA","MI","IN","NC","GA","TN","NH","SC","LA","KY","WI","WA","AL","MO","TX","WV","VT","MN","MS","IA","AR","OK","AZ","CO","ME","OR","KS","UT","NE","NV","ID","NM","SD","ND","MT","WY","Ak") GROUP BY company_state_code',function(err,rows)
+       {
+           if(err)
+               console.log("Error Selecting : %s ",err );
+           for (var i = 0; i < rows.length; i++) {
+                acquisition_info.push({
+                    value: rows[i].count,
+                    code: rows[i].company_state_code
+                });
+            }
+            res.send(acquisition_info);
+        });
+    });
+});
+
+router.post('/postStateInfo', function(req, res) {
+    if (req.body.stateCode) {
+        var category_info=[];
+        req.getConnection(function(err,connection){
+        var query = connection.query('SELECT COUNT(company_category_list) as count, company_category_list FROM startup.acquisitions where company_state_code = ? and company_country_code="USA" and acquired_year=2015 group by company_category_list',[req.body.stateCode],function(err,rows)
+           {
+               if(err)
+                   console.log("Error Selecting : %s ",err );
+               for (var i = 0; i < rows.length; i++) {
+                    category_info.push([rows[i].company_category_list,rows[i].count]);
+                }
+                console.log(category_info);
+                res.send(category_info);
+            });
+        });
+    }
 });
 
 router.get('/dashboard',function(req,res){

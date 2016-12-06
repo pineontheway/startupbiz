@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
- 
+
     <!-- Theme CSS -->
 
     <!-- Custom Fonts -->
@@ -27,7 +27,7 @@
 
 
     <link href="stylesheets/metisMenu.min.css" rel="stylesheet">
-     <link href="stylesheets/datatable.css" rel="stylesheet">
+
     <!-- Custom CSS -->
     <link href="stylesheets/sb-admin-2.css" rel="stylesheet">
 
@@ -44,7 +44,7 @@
 </head>
 
 
-<body>
+<body ng-app="myModule" ng-controller="myController">
 
     <div id="wrapper" >
 
@@ -210,7 +210,7 @@
                 <div id="container2" style="height: 500px; min-width: 450px; max-width: 800px; margin: 0 auto"></div>
                 </div>
                 <!-- /.col-lg-8 -->
-               
+
                     <!-- /.panel -->
 
                     <!-- /.panel -->
@@ -224,430 +224,9 @@
             </div>
 
              <div class="row">
-              
+
                 <div class="col-lg-6">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Rendering engine</th>
-                                        <th>Browser</th>
-                                        <th>Platform(s)</th>
-                                        <th>Engine version</th>
-                                        <th>CSS grade</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="even gradeC">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 5.5</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">5.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 6</td>
-                                        <td>Win 98+</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="odd gradeA">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 7</td>
-                                        <td>Win XP SP2+</td>
-                                        <td class="center">7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="even gradeA">
-                                        <td>Trident</td>
-                                        <td>AOL browser (AOL desktop)</td>
-                                        <td>Win XP</td>
-                                        <td class="center">6</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 1.5</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 2.0</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Firefox 3.0</td>
-                                        <td>Win 2k+ / OSX.3+</td>
-                                        <td class="center">1.9</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.0</td>
-                                        <td>OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Camino 1.5</td>
-                                        <td>OSX.3+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape 7.2</td>
-                                        <td>Win 95+ / Mac OS 8.6-9.2</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape Browser 8</td>
-                                        <td>Win 98SE+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Netscape Navigator 9</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.0</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.1</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.1</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.2</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.2</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.3</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.3</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.4</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.4</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.5</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.6</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">1.6</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.7</td>
-                                        <td>Win 98+ / OSX.1+</td>
-                                        <td class="center">1.7</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Mozilla 1.8</td>
-                                        <td>Win 98+ / OSX.1+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Seamonkey 1.1</td>
-                                        <td>Win 98+ / OSX.2+</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Gecko</td>
-                                        <td>Epiphany 2.20</td>
-                                        <td>Gnome</td>
-                                        <td class="center">1.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>Safari 1.2</td>
-                                        <td>OSX.3</td>
-                                        <td class="center">125.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>Safari 1.3</td>
-                                        <td>OSX.3</td>
-                                        <td class="center">312.8</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>Safari 2.0</td>
-                                        <td>OSX.4+</td>
-                                        <td class="center">419.3</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>Safari 3.0</td>
-                                        <td>OSX.4+</td>
-                                        <td class="center">522.1</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>OmniWeb 5.5</td>
-                                        <td>OSX.4+</td>
-                                        <td class="center">420</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>iPod Touch / iPhone</td>
-                                        <td>iPod</td>
-                                        <td class="center">420.1</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Webkit</td>
-                                        <td>S60</td>
-                                        <td>S60</td>
-                                        <td class="center">413</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 7.0</td>
-                                        <td>Win 95+ / OSX.1+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 7.5</td>
-                                        <td>Win 95+ / OSX.2+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 8.0</td>
-                                        <td>Win 95+ / OSX.2+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 8.5</td>
-                                        <td>Win 95+ / OSX.2+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 9.0</td>
-                                        <td>Win 95+ / OSX.3+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 9.2</td>
-                                        <td>Win 88+ / OSX.3+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera 9.5</td>
-                                        <td>Win 88+ / OSX.3+</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Opera for Wii</td>
-                                        <td>Wii</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Nokia N800</td>
-                                        <td>N800</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Presto</td>
-                                        <td>Nintendo DS browser</td>
-                                        <td>Nintendo DS</td>
-                                        <td class="center">8.5</td>
-                                        <td class="center">C/A<sup>1</sup>
-                                        </td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.1</td>
-                                        <td>KDE 3.1</td>
-                                        <td class="center">3.1</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.3</td>
-                                        <td>KDE 3.3</td>
-                                        <td class="center">3.3</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>KHTML</td>
-                                        <td>Konqureror 3.5</td>
-                                        <td>KDE 3.5</td>
-                                        <td class="center">3.5</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 4.5</td>
-                                        <td>Mac OS 8-9</td>
-                                        <td class="center">-</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 5.1</td>
-                                        <td>Mac OS 7.6-9</td>
-                                        <td class="center">1</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>Tasman</td>
-                                        <td>Internet Explorer 5.2</td>
-                                        <td>Mac OS 8-X</td>
-                                        <td class="center">1</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Misc</td>
-                                        <td>NetFront 3.1</td>
-                                        <td>Embedded devices</td>
-                                        <td class="center">-</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="gradeA">
-                                        <td>Misc</td>
-                                        <td>NetFront 3.4</td>
-                                        <td>Embedded devices</td>
-                                        <td class="center">-</td>
-                                        <td class="center">A</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Misc</td>
-                                        <td>Dillo 0.8</td>
-                                        <td>Embedded devices</td>
-                                        <td class="center">-</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Misc</td>
-                                        <td>Links</td>
-                                        <td>Text only</td>
-                                        <td class="center">-</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="gradeX">
-                                        <td>Misc</td>
-                                        <td>Lynx</td>
-                                        <td>Text only</td>
-                                        <td class="center">-</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>Misc</td>
-                                        <td>IE Mobile</td>
-                                        <td>Windows Mobile 6</td>
-                                        <td class="center">-</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="gradeC">
-                                        <td>Misc</td>
-                                        <td>PSP browser</td>
-                                        <td>PSP</td>
-                                        <td class="center">-</td>
-                                        <td class="center">C</td>
-                                    </tr>
-                                    <tr class="gradeU">
-                                        <td>Other browsers</td>
-                                        <td>All others</td>
-                                        <td>-</td>
-                                        <td class="center">-</td>
-                                        <td class="center">U</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
-                          
-                        </div>
+
                         <!-- /.panel-body -->
                     </div>
                     <!-- /.panel -->
@@ -686,332 +265,127 @@
 
 
 <script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/highcharts-3d.js"></script>   
+<script src="https://code.highcharts.com/highcharts-3d.js"></script>
 <script src="http://code.highcharts.com/maps/modules/map.js"></script>
 <!-- <script src="http://code.highcharts.com/maps/modules/exporting.js"></script> -->
 <script src="http://code.highcharts.com/mapdata/countries/us/us-all.js"></script>
 
 <script>
         $(function () {
-    Highcharts.chart('container2', {
-        chart: {
-            type: 'pie',
-            options3d: {
-                enabled: true,
-                alpha: 45
-            }
-        },
-        title: {
-            text: ' Drilldown of Acquisitions  Catagorywise for different States'
-        },
-        subtitle: {
-            text: ''
-        },
-        plotOptions: {
-            pie: {
-                innerSize: 100,
-                depth: 45
-            }
-        },
-        series: [{
-            name: 'Delivered amount',
-            data: [
-                ['Mobile', 40],
-                ['Cloud Computing', 10],
-                ['Big Data Analytics ', 10],
-                ['Healthcare / Biotechnology', 30],
-                ['Software', 50],
-                ['Security', 10],
-                ['Advertising', 10],
-                ['Enterprise', 10],
-                ['Finance', 10],
-                ['E-commerce', 10]
-            ]
-        }]
-    });
+
 });
     </script>
-<script>
-$(function () {
 
+    <script>
+    //graph1 for top countries by rounds
+        angular.module('myModule', [])
+        .controller('myController', function($scope,$http) {
+            $http.get("/getMapInfo")
+            .then(function(response) {
+                $scope.table_data = response.data;
+                Highcharts.mapChart('container', {
 
-        // Instanciate the map
-        Highcharts.mapChart('container', {
+                    chart: {
+                        borderWidth: 1
+                    },
 
-            chart: {
-                borderWidth: 1
-            },
+                    title: {
+                        text: 'US Startups acquisition density'
+                    },
 
-            title: {
-                text: 'US Startups acquisition density'
-            },
+                    legend: {
+                        layout: 'horizontal',
+                        borderWidth: 0,
+                        backgroundColor: 'rgba(255,255,255,0.85)',
+                        floating: true,
+                        verticalAlign: 'top',
+                        y: 25
+                    },
 
-            legend: {
-                layout: 'horizontal',
-                borderWidth: 0,
-                backgroundColor: 'rgba(255,255,255,0.85)',
-                floating: true,
-                verticalAlign: 'top',
-                y: 25
-            },
+                    mapNavigation: {
+                        enabled: true
+                    },
 
-            mapNavigation: {
-                enabled: true
-            },
-
-            colorAxis: {
-                min: 1,
-                type: 'logarithmic',
-                minColor: '#EEEEFF',
-                maxColor: '#000022',
-                stops: [
-                    [0, '#EFEFFF'],
-                    [0.67, '#4444FF'],
-                    [1, '#000022']
-                ]
-            },
-            plotOptions: {
-                series: {
-                    cursor: 'pointer',
-                    point: {
-                        events: {
-                            click: function () {
-                                alert('You selected: ' + this.code);
+                    colorAxis: {
+                        min: 1,
+                        type: 'logarithmic',
+                        minColor: '#EEEEFF',
+                        maxColor: '#000022',
+                        stops: [
+                            [0, '#EFEFFF'],
+                            [0.67, '#4444FF'],
+                            [1, '#000022']
+                        ]
+                    },
+                    plotOptions: {
+                        series: {
+                            cursor: 'pointer',
+                            point: {
+                                events: {
+                                    click: function () {
+                                        $http.post("/postStateInfo",{stateCode:this.code})
+                                        .then(function(response) {
+                                            $scope.category_data = response.data;
+                                            $scope.piechart($scope.category_data);
+                                        });
+                                    }
+                                }
                             }
                         }
-                    }
-                }
-            },
+                    },
 
-            series: [{
-                animation: {
-                    duration: 1000
-                },
-                data: [
-    {
-        "value": 36,
-        "code": "NJ"
-    },
-    {
-        "value": 2,
-        "code": "RI"
-    },
-    {
-        "value": 84,
-        "code": "MA"
-    },
-    {
-        "value": 19,
-        "code": "CT"
-    },
-    {
-        "value": 23,
-        "code": "MD"
-    },
-    {
-        "value": 137,
-        "code": "NY"
-    },
-    {
-        "value": 3,
-        "code": "DE"
-    },
-    {
-        "value": 51,
-        "code": "FL"
-    },
-    {
-        "value": 35,
-        "code": "OH"
-    },
-    {
-        "value": 62,
-        "code": "PA"
-    },
-    {
-        "value": 77,
-        "code": "IL"
-    },
-    {
-        "value": 445,
-        "code": "CA"
-    },
-    {
-        "value": 1,
-        "code": "HI"
-    },
-    {
-        "value": 45,
-        "code": "VA"
-    },
-    {
-        "value": 29,
-        "code": "MI"
-    },
-    {
-        "value": 20,
-        "code": "IN"
-    },
-    {
-        "value": 31,
-        "code": "NC"
-    },
-    {
-        "value": 43,
-        "code": "GA"
-    },
-    {
-        "value": 18,
-        "code": "TN"
-    },
-    {
-        "value": 7,
-        "code": "NH"
-    },
-    {
-        "value": 12,
-        "code": "SC"
-    },
-    {
-        "value": 5,
-        "code": "LA"
-    },
-    {
-        "value": 6,
-        "code": "KY"
-    },
-    {
-        "value": 21,
-        "code": "WI"
-    },
-    {
-        "value": 40,
-        "code": "WA"
-    },
-    {
-        "value": 7,
-        "code": "AL"
-    },
-    {
-        "value": 11,
-        "code": "MO"
-    },
-    {
-        "value": 83,
-        "code": "TX"
-    },
-    {
-        "value": 1,
-        "code": "WV"
-    },
-    {
-        "value": 2,
-        "code": "VT"
-    },
-    {
-        "value": 29,
-        "code": "MN"
-    },
-    {
-        "value": 1,
-        "code": "MS"
-    },
-    {
-        "value": 3,
-        "code": "IA"
-    },
-    {
-        "value": 4,
-        "code": "AR"
-    },
-    {
-        "value": 3,
-        "code": "OK"
-    },
-    {
-        "value": 25,
-        "code": "AZ"
-    },
-    {
-        "value": 33,
-        "code": "CO"
-    },
-    {
-        "value": 3,
-        "code": "ME"
-    },
-    {
-        "value": 25,
-        "code": "OR"
-    },
-    {
-        "value": 14,
-        "code": "KS"
-    },
-    {
-        "value": 18,
-        "code": "UT"
-    },
-    {
-        "value": 6,
-        "code": "NE"
-    },
-    {
-        "value": 8,
-        "code": "NV"
-    },
-    {
-        "value": 3,
-        "code": "ID"
-    },
-    {
-        "value": 1,
-        "code": "NM"
-    },
-    {
-        "value": 1,
-        "code": "SD"
-    },
-    {
-        "value": 1,
-        "code": "ND"
-    },
-    {
-        "value": 1,
-        "code": "MT"
-    },
-    {
-        "value": 1,
-        "code": "WY"
-    },
-    {
-        "value": 1,
-        "code": "Ak"
-    }
-],
-                mapData: Highcharts.maps['countries/us/us-all'],
-                joinBy: ['postal-code', 'code'],
-                dataLabels: {
-                    enabled: true,
-                    color: '#FFFFFF',
-                    format: '{point.code}'
-                },
-                name: 'Startup density',
-                tooltip: {
-                    pointFormat: '{point.code}: {point.value}'
-                }
-            }]
-        });
-});
+                    series: [{
+                        animation: {
+                            duration: 1000
+                        },
+                        data: response.data,
+                        mapData: Highcharts.maps['countries/us/us-all'],
+                        joinBy: ['postal-code', 'code'],
+                        dataLabels: {
+                            enabled: true,
+                            color: '#FFFFFF',
+                            format: '{point.code}'
+                        },
+                        name: 'Startup density',
+                        tooltip: {
+                            pointFormat: '{point.code}: {point.value}'
+                        }
+                    }]
+                });
 
-</script>
- <!-- Maps script-->
- <script>
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-            responsive: true
+            });
+
+            $scope.piechart =function (data) {
+                console.log("Piechart");
+                Highcharts.chart('container2', {
+                    chart: {
+                        type: 'pie',
+                        options3d: {
+                            enabled: true,
+                            alpha: 45
+                        }
+                    },
+                    title: {
+                        text: ' Drilldown of Acquisitions  Catagorywise for different States'
+                    },
+                    subtitle: {
+                        text: ''
+                    },
+                    plotOptions: {
+                        pie: {
+                            innerSize: 100,
+                            depth: 45
+                        }
+                    },
+                    series: [{
+                        name: 'Delivered amount',
+                        data: data
+                    }]
+                });
+            }
+
         });
-    });
     </script>
-    
+
+
 </body>
