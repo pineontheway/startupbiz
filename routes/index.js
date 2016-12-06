@@ -78,6 +78,34 @@ router.get('/getRounds', function(req, res, next) {
     });
 });
 
+router.get('/getInv', function(req, res, next) {
+    console.log("Regions::::::::::::::");
+    var inv=[];
+    var y2015=[];
+    var y2014=[];
+    var y2013=[];
+    var y2012=[];
+    var y2011=[];
+    var allYear=[];
+    req.getConnection(function(err,connection){
+    var query = connection.query('SELECT Investors, Y2015, Y2014, Y2013, Y2012, Y2011, AVG((Y2015+Y2014+Y2013+Y2012+Y2011)/5) as allYear FROM startup.investors_by_rounds group by Investors, Y2015, Y2014, Y2013, Y2012, Y2011;',function(err,rows)
+       {
+           if(err)
+               console.log("Error Selecting : %s ",err );
+           for (var i = 0; i < rows.length; i++) {
+                inv.push(rows[i].Investors);
+                y2015.push(rows[i].Y2015);
+                y2014.push(rows[i].Y2014);
+                y2013.push(rows[i].Y2013);
+                y2012.push(rows[i].Y2012);
+                y2011.push(rows[i].Y2011);
+                allYear.push(rows[i].allYear);
+            }
+            res.send({inv: inv, y2015: y2015, y2014: y2014, y2013: y2013, y2012: y2012, y2011: y2011, allYear: allYear});
+        });
+    });
+});
+
 router.get('/dashboard',function(req,res){
     res.render("dashboard");
 });

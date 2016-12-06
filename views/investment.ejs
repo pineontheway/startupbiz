@@ -41,7 +41,7 @@
 
 </head>
 
-<body>
+<body ng-app="myModule" ng-controller="myController">
  <div id="wrapper">
 <nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
@@ -165,10 +165,6 @@
                             <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
                         </li>
 
-
-
-
-
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -185,7 +181,18 @@
             </div>
               <div class="row">
                 <div class="col-lg-8">
-             <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto" ></div>
+             <div id="container" style="width: 800px; height: 450px; margin: 0 auto" ></div>
+             <div class="panel-body">
+                                <div class="row">
+
+                                    <!-- /.col-lg-4 (nested) -->
+                                    <div class="col-lg-8">
+                                        <div id="container2" style="height: 600px; width: 800px; margin: 0 auto"></div>
+                                    </div>
+                                    <!-- /.col-lg-8 (nested) -->
+                                </div>
+                                <!-- /.row -->
+                            </div>
    </div>
   
    </div>
@@ -261,72 +268,92 @@
 
         }]
     });
-});
-    </script>
+});     
 
-    <script>
-    $(function () {
-Highcharts.chart('container2', {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'Top Regions by Investment 2015 YTD'
-    },
-    subtitle: {
-        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
-    },
-    xAxis: {
-        categories: ['SF Bay Area','New York City','Boston','London','Los Angeles','Seattle','Chicago','Austin','San Diego','Washington D.C.','Denver','Salt Lake City','Raleigh','Atlanta','Toronto','Dallas','Baltimore','Philadelphia','Miami','Vancouver','Detroit','Phoenix','St. Louis','Montreal','Bakersfield'],
+angular.module('myModule', [])
+        .controller('myController', function($scope,$http) {
+            $http.get("/getInv")
+            .then(function(response) {
+    Highcharts.chart('container2', {
         title: {
-            text: null
-        }
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Money (millions)',
-            align: 'high'
+            text: 'Top Investor Rounds Yearly'
+        },
+        xAxis: {
+            categories: response.data.inv
         },
         labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: ' millions'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
+            items: [{
+                html: 'Total Funding Rounds',
+                style: {
+                    left: '50px',
+                    top: '18px',
+                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                }
+            }]
+        },
+        series: [{
+            type: 'column',
+            name: '2015',
+            data: response.data.y2015
+        }, {
+            type: 'column',
+            name: '2014',
+            data: response.data.y2014
+        }, {
+            type: 'column',
+            name: '2013',
+            data: response.data.y2013
+        }, {
+            type: 'column',
+            name: '2012',
+            data: response.data.y2012
+        }, {
+            type: 'column',
+            name: '2011',
+            data: response.data.y2011
+        }, {
+            type: 'spline',
+            name: 'Average',
+            data: response.data.allYear,
+            marker: {
+                lineWidth: 2,
+                lineColor: Highcharts.getOptions().colors[3],
+                fillColor: 'white'
             }
-        }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-        shadow: true
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: 'Angel',
-        data: [41311288,15765683,3320000,47302417,2513000,8080495,2005000,4300000,4902495,2378800,1400000,2500000,1597589,10750000,40000000,4904999,1700000,1000000,1141377,750000,1000000,1570750,1800000,3000000,5000000]
-    }, {
-        name: 'Seed',
-        data: [27684982912,7127720128,5722220072,3740724045,2984580107,2672872113,1122539815,988732026,1278382397,1249093300,858676291,1003287385,831537497,811208022,808564399,710470063,658296521,611015964,530412282,411969682,481637201,439835888,420497503,277357500,271957938]
-    }, {
-        name: 'Venture',
-        data: [682819821,314146953,122191793,219788758,159473573,290254394,35635000,65506062,20068790,51168081,49765104,29534233,25420604,19246000,56537307,19765191,12250000,18949622,16153160,17570346,11861556,18034957,16010000,12374470,13620000]
-    }]
+        }, {
+            type: 'pie',
+            name: 'Total Rounds',
+            data: [{
+                name: '2015',
+                y: 1157,
+                color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+                name: '2014',
+                y: 1416,
+                color: Highcharts.getOptions().colors[1] // John's color
+            }, {
+                name: '2013',
+                y: 1217,
+                color: Highcharts.getOptions().colors[2] // John's color
+            }, {
+                name: '2012',
+                y: 1137,
+                color: Highcharts.getOptions().colors[3] // John's color
+            }, {
+                name: '2011',
+                y: 988,
+                color: Highcharts.getOptions().colors[4] // Joe's color
+            }],
+            center: [100, 80],
+            size: 100,
+            showInLegend: false,
+            dataLabels: {
+                enabled: false
+            }
+        }]
+    });
 });
+
 });
     </script>
 
