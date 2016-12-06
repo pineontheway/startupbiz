@@ -60,6 +60,23 @@ router.get('/getRegions', function(req, res, next) {
     });
 });
 
+router.get('/getRounds', function(req, res, next) {
+    console.log("Regions::::::::::::::");
+    var reg=[];
+    var round=[];
+    req.getConnection(function(err,connection){
+    var query = connection.query('SELECT Regions, Rounds FROM regions_by_rounds WHERE Year=2015 ORDER BY Rounds DESC;',function(err,rows)
+       {
+           if(err)
+               console.log("Error Selecting : %s ",err );
+           for (var i = 0; i < rows.length; i++) {
+                reg.push(rows[i].Regions);
+                round.push(rows[i].Rounds);
+            }
+            res.send({reg: reg, round: round});
+        });
+    });
+});
 
 router.get('/dashboard',function(req,res){
     res.render("dashboard");
