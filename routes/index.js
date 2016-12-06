@@ -38,31 +38,28 @@ router.get('/getData', function(req, res, next) {
     });
 });
 
-// router.get('/getRegions', function(req, res, next) {
-//     console.log("Regions::::::::::::::");
-//     var top_countries=[];
-//     var regions=[];
-//     var angel=[];
-//     var seed=[];
-//     var venture=[];
-//     req.getConnection(function(err,connection){
-//     var query = connection.query('SELECT Regions, Angel, Venture, Seed from regions_by_investment where Year=2015 limit 10',function(err,rows)
-//        {
-  
-//            if(err)
-//                console.log("Error Selecting : %s ",err );
-//            for (var i = 0; i < rows.length; i++) {
-//                 regions.push(rows[i].Regions);
-//                 angel.push(rows[i].Angel);
-//                 seed.push(rows[i].Venture);
-//                 venture.push(rows[i].Seed);
-//             }
-//             res.send({regions: regions, angel: angel, seed: seed, venture: venture});
-//         });
-//     });
-// });
-
-
+router.get('/getRegions', function(req, res, next) {
+    console.log("Regions::::::::::::::");
+    var top_countries=[];
+    var regions=[];
+    var angel=[];
+    var seed=[];
+    var venture=[];
+    req.getConnection(function(err,connection){
+    var query = connection.query('SELECT Regions, Angel, Venture, Seed from regions_by_investment where Year=2015 limit 10',function(err,rows)
+       {
+           if(err)
+               console.log("Error Selecting : %s ",err );
+           for (var i = 0; i < rows.length; i++) {
+                regions.push(rows[i].Regions);
+                angel.push(rows[i].Angel);
+                seed.push(rows[i].Venture);
+                venture.push(rows[i].Seed);
+            }
+            res.send({regions: regions, angel: angel, seed: seed, venture: venture});
+        });
+    });
+});
 
 
 router.get('/dashboard',function(req,res){
@@ -78,14 +75,13 @@ router.get('/prediction',function(req,res){
 router.get('/investment',function(req,res){
     res.render("investment");
 });
-router.get('/people',function(req,res){
-    res.render("people");
-});
+
 router.get('/funding',function(req,res){
     res.render("funding");
 });
-router.get('/startup',function(req,res){
-    res.render("startup");
+
+router.get('/people',function(req,res){
+    res.render("people");
 });
 
 module.exports = router;
