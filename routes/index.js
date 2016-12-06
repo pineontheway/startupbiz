@@ -40,7 +40,6 @@ router.get('/getData', function(req, res, next) {
 
 router.get('/getRegions', function(req, res, next) {
     console.log("Regions::::::::::::::");
-    var top_countries=[];
     var regions=[];
     var angel=[];
     var seed=[];
