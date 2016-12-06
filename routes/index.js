@@ -65,7 +65,7 @@ router.get('/getRounds', function(req, res, next) {
     var reg=[];
     var round=[];
     req.getConnection(function(err,connection){
-    var query = connection.query('SELECT Regions, Rounds FROM regions_by_rounds WHERE Year=2015 ORDER BY Rounds DESC;',function(err,rows)
+    var query = connection.query('SELECT Regions, Rounds FROM regions_by_rounds WHERE Year=2015 ORDER BY Rounds DESC LIMIT 10;',function(err,rows)
        {
            if(err)
                console.log("Error Selecting : %s ",err );
