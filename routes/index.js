@@ -134,5 +134,4 @@ router.get('/funding',function(req,res){
 router.get('/people',function(req,res){
     res.render("people");
 });
-
 module.exports = router;
