@@ -165,6 +165,9 @@
                                 <a href="/funding"><i class="fa fa-usd fa-fw"></i> Funding Rounds</a>
                             </li>
                             <li>
+                                <a href="/prediction"><i class="fa fa-user-circle fa-fw"></i> Prediction</a>
+                            </li>
+                            <li>
                                 <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
                             </li>
                         </ul>
@@ -351,43 +354,43 @@
 
     <script>
     //graph1 for top countries by rounds
-        angular.module('myModule', [])
-        .controller('myController', function($scope,$http) {
-            $http.get("/getData")
-            .then(function(response) {
-               Highcharts.chart('container', {
-                   chart: {
-                       plotBackgroundColor: null,
-                       plotBorderWidth: null,
-                       plotShadow: false,
-                       type: 'pie'
-                   },
-                   title: {
-                       text: 'Top Countries by Rounds 2015 YTD'
-                   },
-                   tooltip: {
-                       pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                   },
-                   plotOptions: {
-                       pie: {
-                           allowPointSelect: true,
-                           cursor: 'pointer',
-                           dataLabels: {
-                               enabled: true,
-                               format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                               style: {
-                                   color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                               }
+    angular.module('myModule', [])
+    .controller('myController', function($scope,$http) {
+        $http.get("/getData")
+        .then(function(response) {
+           Highcharts.chart('container', {
+               chart: {
+                   plotBackgroundColor: null,
+                   plotBorderWidth: null,
+                   plotShadow: false,
+                   type: 'pie'
+               },
+               title: {
+                   text: 'Top Countries by Rounds 2015 YTD'
+               },
+               tooltip: {
+                   pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+               },
+               plotOptions: {
+                   pie: {
+                       allowPointSelect: true,
+                       cursor: 'pointer',
+                       dataLabels: {
+                           enabled: true,
+                           format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                           style: {
+                               color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                            }
                        }
-                   },
-                   series: [{
-                       name: 'Companies',
-                       colorByPoint: true,
-                       data: response.data
-                   }]
-               });
+                   }
+               },
+               series: [{
+                   name: 'Companies',
+                   colorByPoint: true,
+                   data: response.data
+               }]
            });
+       });
 
             //graph2 for top regions by investments
             $http.get("/getRegions")
