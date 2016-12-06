@@ -43,7 +43,7 @@
     </head>
 
 
-    <body>
+    <body ng-app="myModule" ng-controller="myController">
 
         <div id="wrapper" >
 
@@ -302,7 +302,10 @@
 
 
 <script>
-    $(function () {
+    angular.module('myModule', [])
+        .controller('myController', function($scope,$http) {
+            $http.get("/getRounds")
+            .then(function(response) {
         var chart = Highcharts.chart('container', {
 
             title: {
@@ -314,13 +317,13 @@
             },
 
             xAxis: {
-                categories: ['SF Bay Area', 'Newyork', 'Boston', 'Seattle', 'Austin', 'Washington DC', 'Denver', 'Atlanta', 'Houston', 'Dallas', 'Chicago', 'San Diego']
+                categories: response.data.reg
             },
 
             series: [{
                 type: 'column',
                 colorByPoint: true,
-                data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+                data: response.data.round,
                 showInLegend: false
             }]
 
@@ -362,7 +365,7 @@
                 }
             });
         });
-
+});
     });
 </script>
 <!-- Maps script-->
