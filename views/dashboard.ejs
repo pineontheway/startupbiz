@@ -342,6 +342,7 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
     <script>
+    //graph1 for top countries by rounds
         angular.module('myModule', [])
         .controller('myController', function($scope,$http) {
             $http.get("/getData")
@@ -379,6 +380,8 @@
                    }]
                });
            });
+
+            //graph2 for top regions by investments
             $http.get("/getRegions")
             .then(function(response) {
                 Highcharts.chart('container2', {
