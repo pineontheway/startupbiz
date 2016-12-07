@@ -14,6 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -43,7 +44,7 @@
     </head>
 
 
-    <body>
+    <body ng-app="myModule" ng-controller="myController">
 
         <div id="wrapper" >
 
@@ -62,14 +63,10 @@
 
                 <ul class="nav navbar-top-links navbar-right">
                     <li class="dropdown">
-
-
                         <!-- /.dropdown-messages -->
                     </li>
                     <!-- /.dropdown -->
                     <li class="dropdown">
-
-
                         <!-- /.dropdown-tasks -->
                     </li>
                     <!-- /.dropdown -->
@@ -172,11 +169,6 @@
                             <li>
                                 <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
                             </li>
-
-
-
-
-
                         </ul>
                     </div>
                     <!-- /.sidebar-collapse -->
@@ -193,113 +185,58 @@
                 </div>
                 <!-- /.row -->
                 <div class="row">
-                    <div class="col-lg-10">
+                <div class="col-lg-12">
                         <!-- /.panel -->
                         <h5>
                             Select domain:&nbsp;
-                            <select class="domain" id="domain">
-                              <option value="Analytics" selected>Analytics</option>
-                              <option value="Biotechnology">Biotechnology</option>
-                              <option value="Broadcasting">Broadcasting</option>
-                              <option value="E-Commerce">E-Commerce</option>
-                              <option value="Finance">Finance</option>
-                              <option value="Game">Game</option>
-                              <option value="Hardware">Hardware</option>
-                              <option value="Health Care">Health Care</option>
-                              <option value="Medical">Medical</option>
-                              <option value="Mobile">Mobile</option>
-                              <option value="Social Media">Social Media</option>
-                              <option value="Software">Software</option>
-                              <option value="Web">Web</option>
-                          </select>
-                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          Select location:&nbsp;
-                          <select class="state" id="state">
-                            <option value="AL" selected>Alabama</option>
-                            <option value="AK">Alaska</option>
-                            <option value="AZ">Arizona</option>
-                            <option value="AR">Arkansas</option>
-                            <option value="CA">California</option>
-                            <option value="CO">Colorado</option>
-                            <option value="CT">Connecticut</option>
-                            <option value="DE">Delaware</option>
-                            <option value="DC">District Of Columbia</option>
-                            <option value="FL">Florida</option>
-                            <option value="GA">Georgia</option>
-                            <option value="HI">Hawaii</option>
-                            <option value="ID">Idaho</option>
-                            <option value="IL">Illinois</option>
-                            <option value="IN">Indiana</option>
-                            <option value="IA">Iowa</option>
-                            <option value="KS">Kansas</option>
-                            <option value="KY">Kentucky</option>
-                            <option value="LA">Louisiana</option>
-                            <option value="ME">Maine</option>
-                            <option value="MD">Maryland</option>
-                            <option value="MA">Massachusetts</option>
-                            <option value="MI">Michigan</option>
-                            <option value="MN">Minnesota</option>
-                            <option value="MS">Mississippi</option>
-                            <option value="MO">Missouri</option>
-                            <option value="MT">Montana</option>
-                            <option value="NE">Nebraska</option>
-                            <option value="NV">Nevada</option>
-                            <option value="NH">New Hampshire</option>
-                            <option value="NJ">New Jersey</option>
-                            <option value="NM">New Mexico</option>
-                            <option value="NY">New York</option>
-                            <option value="NC">North Carolina</option>
-                            <option value="ND">North Dakota</option>
-                            <option value="OH">Ohio</option>
-                            <option value="OK">Oklahoma</option>
-                            <option value="OR">Oregon</option>
-                            <option value="PA">Pennsylvania</option>
-                            <option value="RI">Rhode Island</option>
-                            <option value="SC">South Carolina</option>
-                            <option value="SD">South Dakota</option>
-                            <option value="TN">Tennessee</option>
-                            <option value="TX">Texas</option>
-                            <option value="UT">Utah</option>
-                            <option value="VT">Vermont</option>
-                            <option value="VA">Virginia</option>
-                            <option value="WA">Washington</option>
-                            <option value="WV">West Virginia</option>
-                            <option value="WI">Wisconsin</option>
-                            <option value="WY">Wyoming</option>
-                        </select>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <select ng-init="ddlDomains = 'Analytics'" ng-model="ddlDomains" ng-options="domain.Id as domain.Name for domain in Domains track by domain.Id" ng-change="GetValue()">
+                            </select> 
 
-                        Total funds till date:&nbsp;
-                        <select class="dollar" id="dollar"></select>
-                    </h5>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Select location:&nbsp;
+                            <select ng-init="locationsMod = 'Alabama'" ng-model="locationsMod" ng-options="location.Id as location.Name for location in Locations track by location.Id" ng-change="GetValue()">
+                            </select> 
+
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            Total funds till date:&nbsp;
+
+                            <select ng-init="rangeMod = 1" ng-model="rangeMod" ng-options="range.Id as range.Name for range in Funds track by range.Id" ng-change="GetValue()">
+                            </select> 
+                        </h5>
+                        <!-- /.panel -->
+                        <div class="panel panel-default">
+                        </div>
+                        <!-- /.panel -->
                     </div>
-                    <!-- /.panel -->
                 </div>
+                <!-- /.row -->
+                <div class="row">
+                   <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Company</th>
+                            <th>Funding Rounds</th>
+                            <th>Total Funds</th>
+                            <th>Success Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in category_data">
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.rounds }}</td>
+                            <td>{{ x.funds }}</td>
+                            <td>{{ x.pred }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <!-- /.row -->
-            <div class="row">
-             <div class="col-lg-10">
-                <table class="table table-striped">
-                    <thead>
-                      <tr>
-                        <th>Company</th>
-                        <th>Domain</th>
-                        <th>Total Funds</th>
-                        <th>Location</th>
-                    </tr>
-                </thead>
-                <tbody>
-                  
-            </tbody>
-        </table>
+
+        </div>
     </div>
 
-</div>
-</div>
-
-<!-- /.col-lg-4 -->
+    <!-- /.col-lg-4 -->
 </div>
 <!-- /.row -->
 </div>
@@ -319,38 +256,251 @@
         }
     });
 
-    $(document).ready(function() {
-      $('#dollar').on('change', function() {
-         checkChange();
-     });
-  });
+    angular.module('myModule', [])
+    .controller('myController', function ($scope, $http) {
 
-    $(document).ready(function() {
-      $('#domain').on('change', function() {
-         checkChange();
-     });
-  });
+        $scope.Funds = [{
+            Id: '1',
+            Name: '$0 - $10,000,000'
+        }, {
+            Id: '2',
+            Name: '$10,000,000 - $20,000,000'
+        }, {
+            Id: '3',
+            Name: '$20,000,000 - $30,000,000'
+        }, {
+            Id: '4',
+            Name: '$30,000,000 - $40,000,000'
+        }, {
+            Id: '5',
+            Name: '$40,000,000 - $50,000,000'
+        }, {
+            Id: '6',
+            Name: '$50,000,000 - $60,000,000'
+        }, {
+            Id: '7',
+            Name: '$60,000,000 - $70,000,000'
+        }, {
+            Id: '8',
+            Name: '$70,000,000 - $80,000,000'
+        }, {
+            Id: '9',
+            Name: '$80,000,000 - $90,000,000'
+        }, {
+            Id: '10',
+            Name: '$90,000,000 - $100,000,000'
+        }, {
+            Id: '11',
+            Name: '$100,000,000 - $2,500,000,000'
+        }]
 
-    $(document).ready(function() {
-      $('#state').on('change', function() {
-         checkChange();
-     });
-  });
+        $scope.Locations = [{
+            Id: 'AK',
+            Name: 'Alabama'
+        }, {
+            Id: 'AL',
+            Name: 'Alaska'
+        }, {
+            Id: 'AR',
+            Name: 'Arizona'
+        }, {
+            Id: 'AZ',
+            Name: 'Arkansas'
+        }, {
+            Id: 'CA',
+            Name: 'California'
+        }, {
+            Id: 'CO',
+            Name: 'Colorado'
+        }, {
+            Id: 'CT',
+            Name: 'Connecticut'
+        }, {
+            Id: 'DC',
+            Name: 'Dist of Columbia'
+        }, {
+            Id: 'DE',
+            Name: 'Delaware'
+        }, {
+            Id: 'FL',
+            Name: 'Florida'
+        }, {
+            Id: 'GA',
+            Name: 'Georgia'
+        }, {
+            Id: 'HI',
+            Name: 'Hawaii'
+        }, {
+            Id: 'ID',
+            Name: 'Idaho'
+        }, {
+            Id: 'IL',
+            Name: 'Illinois'
+        }, {
+            Id: 'IN',
+            Name: 'Indiana'
+        }, {
+            Id: 'IA',
+            Name: 'Iowa'
+        }, {
+            Id: 'KS',
+            Name: 'Kansas'
+        }, {
+            Id: 'KY',
+            Name: 'Kentucky'
+        }, {
+            Id: 'LA',
+            Name: 'Louisiana'
+        }, {
+            Id: 'ME',
+            Name: 'Maine'
+        }, {
+            Id: 'MD',
+            Name: 'Maryland'
+        }, {
+            Id: 'MA',
+            Name: 'Massachusetts'
+        }, {
+            Id: 'MI',
+            Name: 'Michigan'
+        }, {
+            Id: 'MN',
+            Name: 'Minnesota'
+        }, {
+            Id: 'MS',
+            Name: 'Mississippi'
+        }, {
+            Id: 'MO',
+            Name: 'Missouri'
+        }, {
+            Id: 'MT',
+            Name: 'Montana'
+        }, {
+            Id: 'NE',
+            Name: 'Nebraska'
+        }, {
+            Id: 'NV',
+            Name: 'Nevada'
+        }, {
+            Id: 'NH',
+            Name: 'New Hampshire'
+        }, {
+            Id: 'NJ',
+            Name: 'New Jersey'
+        }, {
+            Id: 'NM',
+            Name: 'New Mexico'
+        }, {
+            Id: 'NY',
+            Name: 'New York'
+        }, {
+            Id: 'NC',
+            Name: 'North Carolina'
+        }, {
+            Id: 'ND',
+            Name: 'North Dakota'
+        }, {
+            Id: 'OH',
+            Name: 'Ohio'
+        }, {
+            Id: 'OK',
+            Name: 'Oklahoma'
+        }, {
+            Id: 'OR',
+            Name: 'Oregon'
+        }, {
+            Id: 'PA',
+            Name: 'Pennsylvania'
+        }, {
+            Id: 'RI',
+            Name: 'Rhode Island'
+        }, {
+            Id: 'SC',
+            Name: 'South Carolina'
+        }, {
+            Id: 'SD',
+            Name: 'South Dakota'
+        }, {
+            Id: 'TN',
+            Name: 'Tennessee'
+        }, {
+            Id: 'TX',
+            Name: 'Texas'
+        }, {
+            Id: 'UT',
+            Name: 'Utah'
+        }, {
+            Id: 'VT',
+            Name: 'Vermont'
+        }, {
+            Id: 'VA',
+            Name: 'Virginia'
+        }, {
+            Id: 'WA',
+            Name: 'Washington'
+        }, {
+            Id: 'WV',
+            Name: 'West Virginia'
+        }, {
+            Id: 'WI',
+            Name: 'Wisconsin'
+        }, {
+            Id: 'WY',
+            Name: 'Wyoming'
+        }]; 
 
+        $scope.Domains = [{
+            Id: 'Analytics',
+            Name: 'Analytics'
+        }, {
+            Id: 'Biotechnology',
+            Name: 'Biotechnology'
+        }, {
+            Id: 'Broadcasting',
+            Name: 'Broadcasting'
+        }, {
+            Id: 'Biotechnology',
+            Name: 'Biotechnology'
+        }, {
+            Id: 'E-Commerce',
+            Name: 'E-Commerce'
+        }, {
+            Id: 'Finance',
+            Name: 'Finance'
+        }, {
+            Id: 'Game',
+            Name: 'Game'
+        }, {
+            Id: 'Hardware',
+            Name: 'Hardware'
+        }, {
+            Id: 'Health Care',
+            Name: 'Health Care'
+        }, {
+            Id: 'Medical',
+            Name: 'Medical'
+        }, {
+            Id: 'Mobile',
+            Name: 'Mobile'
+        }, {
+            Id: 'Social Media',
+            Name: 'Social Media'
+        }, {
+            Id: 'Software',
+            Name: 'Software'
+        }, {
+            Id: 'Web',
+            Name: 'Web'
+        }]; 
 
-    function checkChange(){
-        $.post("/reqTable",
-        {
-            reg:document.getElementById ("state"),
-            dol:document.getElementById ("dollar"),
-            dom:document.getElementById ("domain")
-        },
-        function(data){
-            alert("Data: " + data);
-        });
-    }
-
-
+        $scope.GetValue = function () {
+            $http.post("/postSelection",{domainName:$scope.ddlDomains, location:$scope.locationsMod, range:$scope.rangeMod})
+            .then(function(response) {
+                $scope.category_data = response.data;
+                console.log(JSON.stringify(response.data));
+            });
+        }
+    });
 
 </script>
 <script src="/bower_components/jquery/dist/jquery.min.js"></script>
