@@ -14,6 +14,7 @@
 
     <!-- Bootstrap Core CSS -->
     <script src="/bower_components/angular/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -38,238 +39,486 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
-
-
-<body>
-
-    <div id="wrapper">
-
-        <!-- Navigation -->
-        <nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html" style=" color:white;">Startup Biz</a>
-            </div>
-            <!-- /.navbar-header -->
-
-            <ul class="nav navbar-top-links navbar-right">
-                <li class="dropdown">
+    </head>
 
 
-                    <!-- /.dropdown-messages -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
+    <body ng-app="myModule" ng-controller="myController">
 
+        <div id="wrapper" >
 
-                    <!-- /.dropdown-tasks -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-
-                    <ul class="dropdown-menu dropdown-alerts">
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-comment fa-fw"></i> New Comment
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-twitter fa-fw"></i> 3 New Followers
-                                    <span class="pull-right text-muted small">12 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-envelope fa-fw"></i> Message Sent
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-tasks fa-fw"></i> New Task
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a href="#">
-                                <div>
-                                    <i class="fa fa-upload fa-fw"></i> Server Rebooted
-                                    <span class="pull-right text-muted small">4 minutes ago</span>
-                                </div>
-                            </a>
-                        </li>
-                        <li class="divider"></li>
-                        <li>
-                            <a class="text-center" href="#">
-                                <strong>See All Alerts</strong>
-                                <i class="fa fa-angle-right"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-alerts -->
-                </li>
-                <!-- /.dropdown -->
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                    </a>
-                    <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                        </li>
-                    </ul>
-                    <!-- /.dropdown-user -->
-                </li>
-                <!-- /.dropdown -->
-            </ul>
-            <!-- /.navbar-top-links -->
-
-            <div class="navbar-default sidebar" role="navigation">
-                <div class="sidebar-nav navbar-collapse">
-                    <ul class="nav" style="padding-top:60px;" id="side-menu">
-
-                        <li>
-                            <a href="/dashboard"><i class="fa fa-dashboard fa-fw"></i> Companies</a>
-                        </li>
-                         <li>
-                            <a href="investment.html"><i class="fa fa-table fa-fw"></i> Investments</a>
-                        </li>
-                         <li>
-                            <a href="/acquisition"><i class="fa fa-table fa-fw"></i> Acquisitions</a>
-                        </li>
-                         <li>
-                            <a href="funding.html"><i class="fa fa-table fa-fw"></i> Funding Rounds</a>
-                        </li>
-                        <li>
-                            <a href="people.html"><i class="fa fa-table fa-fw"></i> People</a>
-                        </li>
-
-
-
-
-
-                    </ul>
+            <!-- Navigation -->
+            <nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/startup" style=" color:white;">Startup Biz</a>
                 </div>
-                <!-- /.sidebar-collapse -->
-            </div>
-            <!-- /.navbar-static-side -->
-        </nav>
+                <!-- /.navbar-header -->
 
-        <div id="page-wrapper">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h4 class="page-header" style="">Analysis of Acquisitions </h4>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <!-- /.dropdown-messages -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <!-- /.dropdown-tasks -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
 
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-8">
-                    <!-- /.panel -->
-                    <h4>these are the questionares?</h4>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <br>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <h4>these are the questionares?</h4>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <br>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <h4>these are the questionares?</h4>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <br>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <h4>these are the questionares?</h4>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <br>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <button style="width: 200px" type="button" class="btn btn-default">Default</button>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
+                        <ul class="dropdown-menu dropdown-alerts">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-comment fa-fw"></i> New Comment
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-twitter fa-fw"></i> 3 New Followers
+                                        <span class="pull-right text-muted small">12 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-envelope fa-fw"></i> Message Sent
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-tasks fa-fw"></i> New Task
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <i class="fa fa-upload fa-fw"></i> Server Rebooted
+                                        <span class="pull-right text-muted small">4 minutes ago</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a class="text-center" href="#">
+                                    <strong>See All Alerts</strong>
+                                    <i class="fa fa-angle-right"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-alerts -->
+                    </li>
+                    <!-- /.dropdown -->
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white">
+                            <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                        </a>
+                        <ul class="dropdown-menu dropdown-user">
+                            <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                            </li>
+                            <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            </li>
+                        </ul>
+                        <!-- /.dropdown-user -->
+                    </li>
+                    <!-- /.dropdown -->
+                </ul>
+                <!-- /.navbar-top-links -->
 
-                        <!-- /.panel-heading -->
+                <div class="navbar-default sidebar" role="navigation" >
+                    <div class="sidebar-nav navbar-collapse" >
+                        <ul class="nav" style="padding-top:60px;" id="side-menu" >
 
-                        <!-- /.panel-body -->
+                            <li style="color: white">
+                                <a href="/dashboard"><i class="fa fa-industry fa-fw" ></i> Companies</a>
+                            </li>
+                            <li>
+                                <a href="/investment"><i class="fa fa-user-o fa-fw"></i> Investments</a>
+                            </li>
+                            <li>
+                                <a href="/acquisition"><i class="fa fa-random fa-fw"></i> Acquisitions</a>
+                            </li>
+                            <li>
+                                <a href="/funding"><i class="fa fa-usd fa-fw"></i> Funding Rounds</a>
+                            </li>
+                            <li>
+                                <a href="/prediction"><i class="fa fa-user-circle fa-fw"></i> Prediction</a>
+                            </li>
+                            <li>
+                                <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
+                            </li>
+                        </ul>
                     </div>
-                    <!-- /.panel -->
+                    <!-- /.sidebar-collapse -->
                 </div>
-                <!-- /.col-lg-8 -->
-                <div class="col-lg-4">
+                <!-- /.navbar-static-side -->
+            </nav>
 
+            <div id="page-wrapper">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="page-header" style="">People </h4>
+                    </div>
+                    <!-- /.col-lg-12 -->
                 </div>
-                    <!-- /.panel -->
+                <!-- /.row -->
+                <div class="row">
+                <div class="col-lg-12">
+                        <!-- /.panel -->
+                        <h5>
+                            Select domain:&nbsp;
+                            <select ng-init="ddlDomains = 'Analytics'" ng-model="ddlDomains" ng-options="domain.Id as domain.Name for domain in Domains track by domain.Id" ng-change="GetValue()">
+                            </select> 
 
-                    <!-- /.panel -->
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            Select location:&nbsp;
+                            <select ng-init="locationsMod = 'Alabama'" ng-model="locationsMod" ng-options="location.Id as location.Name for location in Locations track by location.Id" ng-change="GetValue()">
+                            </select> 
 
-                        <!-- /.panel-heading -->
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                        <!-- /.panel-body -->
+                            Total funds till date:&nbsp;
 
-                        <!-- /.panel-footer -->
-
+                            <select ng-init="rangeMod = 1" ng-model="rangeMod" ng-options="range.Id as range.Name for range in Funds track by range.Id" ng-change="GetValue()">
+                            </select> 
+                        </h5>
+                        <!-- /.panel -->
+                        <div class="panel panel-default">
+                        </div>
+                        <!-- /.panel -->
+                    </div>
+                </div>
+                <!-- /.row -->
+                <div class="row">
+                   <div class="col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th>Company</th>
+                            <th>Funding Rounds</th>
+                            <th>Total Funds</th>
+                            <th>Success Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="x in category_data">
+                            <td>{{ x.name }}</td>
+                            <td>{{ x.rounds }}</td>
+                            <td>{{ x.funds }}</td>
+                            <td>{{ x.pred }}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-                    <!-- /.panel .chat-panel -->
-                </div>
-
-                <!-- /.col-lg-4 -->
-            </div>
-            <!-- /.row -->
         </div>
-        <!-- /#page-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
 
-    <!-- jQuery -->
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /#page-wrapper -->
 
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/javascripts/metisMenu.min.js"></script>
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+
+<script type="text/javascript">
+
+    $(function(){
+        var $select = $(".dollar");
+        for (i=0;i<=30000000000;i+=5000000000){
+            $select.append($('<option></option>').val(i).html(i))
+        }
+    });
+
+    angular.module('myModule', [])
+    .controller('myController', function ($scope, $http) {
+
+        $scope.Funds = [{
+            Id: '1',
+            Name: '$0 - $10,000,000'
+        }, {
+            Id: '2',
+            Name: '$10,000,000 - $20,000,000'
+        }, {
+            Id: '3',
+            Name: '$20,000,000 - $30,000,000'
+        }, {
+            Id: '4',
+            Name: '$30,000,000 - $40,000,000'
+        }, {
+            Id: '5',
+            Name: '$40,000,000 - $50,000,000'
+        }, {
+            Id: '6',
+            Name: '$50,000,000 - $60,000,000'
+        }, {
+            Id: '7',
+            Name: '$60,000,000 - $70,000,000'
+        }, {
+            Id: '8',
+            Name: '$70,000,000 - $80,000,000'
+        }, {
+            Id: '9',
+            Name: '$80,000,000 - $90,000,000'
+        }, {
+            Id: '10',
+            Name: '$90,000,000 - $100,000,000'
+        }, {
+            Id: '11',
+            Name: '$100,000,000 - $2,500,000,000'
+        }]
+
+        $scope.Locations = [{
+            Id: 'AK',
+            Name: 'Alabama'
+        }, {
+            Id: 'AL',
+            Name: 'Alaska'
+        }, {
+            Id: 'AR',
+            Name: 'Arizona'
+        }, {
+            Id: 'AZ',
+            Name: 'Arkansas'
+        }, {
+            Id: 'CA',
+            Name: 'California'
+        }, {
+            Id: 'CO',
+            Name: 'Colorado'
+        }, {
+            Id: 'CT',
+            Name: 'Connecticut'
+        }, {
+            Id: 'DC',
+            Name: 'Dist of Columbia'
+        }, {
+            Id: 'DE',
+            Name: 'Delaware'
+        }, {
+            Id: 'FL',
+            Name: 'Florida'
+        }, {
+            Id: 'GA',
+            Name: 'Georgia'
+        }, {
+            Id: 'HI',
+            Name: 'Hawaii'
+        }, {
+            Id: 'ID',
+            Name: 'Idaho'
+        }, {
+            Id: 'IL',
+            Name: 'Illinois'
+        }, {
+            Id: 'IN',
+            Name: 'Indiana'
+        }, {
+            Id: 'IA',
+            Name: 'Iowa'
+        }, {
+            Id: 'KS',
+            Name: 'Kansas'
+        }, {
+            Id: 'KY',
+            Name: 'Kentucky'
+        }, {
+            Id: 'LA',
+            Name: 'Louisiana'
+        }, {
+            Id: 'ME',
+            Name: 'Maine'
+        }, {
+            Id: 'MD',
+            Name: 'Maryland'
+        }, {
+            Id: 'MA',
+            Name: 'Massachusetts'
+        }, {
+            Id: 'MI',
+            Name: 'Michigan'
+        }, {
+            Id: 'MN',
+            Name: 'Minnesota'
+        }, {
+            Id: 'MS',
+            Name: 'Mississippi'
+        }, {
+            Id: 'MO',
+            Name: 'Missouri'
+        }, {
+            Id: 'MT',
+            Name: 'Montana'
+        }, {
+            Id: 'NE',
+            Name: 'Nebraska'
+        }, {
+            Id: 'NV',
+            Name: 'Nevada'
+        }, {
+            Id: 'NH',
+            Name: 'New Hampshire'
+        }, {
+            Id: 'NJ',
+            Name: 'New Jersey'
+        }, {
+            Id: 'NM',
+            Name: 'New Mexico'
+        }, {
+            Id: 'NY',
+            Name: 'New York'
+        }, {
+            Id: 'NC',
+            Name: 'North Carolina'
+        }, {
+            Id: 'ND',
+            Name: 'North Dakota'
+        }, {
+            Id: 'OH',
+            Name: 'Ohio'
+        }, {
+            Id: 'OK',
+            Name: 'Oklahoma'
+        }, {
+            Id: 'OR',
+            Name: 'Oregon'
+        }, {
+            Id: 'PA',
+            Name: 'Pennsylvania'
+        }, {
+            Id: 'RI',
+            Name: 'Rhode Island'
+        }, {
+            Id: 'SC',
+            Name: 'South Carolina'
+        }, {
+            Id: 'SD',
+            Name: 'South Dakota'
+        }, {
+            Id: 'TN',
+            Name: 'Tennessee'
+        }, {
+            Id: 'TX',
+            Name: 'Texas'
+        }, {
+            Id: 'UT',
+            Name: 'Utah'
+        }, {
+            Id: 'VT',
+            Name: 'Vermont'
+        }, {
+            Id: 'VA',
+            Name: 'Virginia'
+        }, {
+            Id: 'WA',
+            Name: 'Washington'
+        }, {
+            Id: 'WV',
+            Name: 'West Virginia'
+        }, {
+            Id: 'WI',
+            Name: 'Wisconsin'
+        }, {
+            Id: 'WY',
+            Name: 'Wyoming'
+        }]; 
+
+        $scope.Domains = [{
+            Id: 'Analytics',
+            Name: 'Analytics'
+        }, {
+            Id: 'Biotechnology',
+            Name: 'Biotechnology'
+        }, {
+            Id: 'Broadcasting',
+            Name: 'Broadcasting'
+        }, {
+            Id: 'Biotechnology',
+            Name: 'Biotechnology'
+        }, {
+            Id: 'E-Commerce',
+            Name: 'E-Commerce'
+        }, {
+            Id: 'Finance',
+            Name: 'Finance'
+        }, {
+            Id: 'Game',
+            Name: 'Game'
+        }, {
+            Id: 'Hardware',
+            Name: 'Hardware'
+        }, {
+            Id: 'Health Care',
+            Name: 'Health Care'
+        }, {
+            Id: 'Medical',
+            Name: 'Medical'
+        }, {
+            Id: 'Mobile',
+            Name: 'Mobile'
+        }, {
+            Id: 'Social Media',
+            Name: 'Social Media'
+        }, {
+            Id: 'Software',
+            Name: 'Software'
+        }, {
+            Id: 'Web',
+            Name: 'Web'
+        }]; 
+
+        $scope.GetValue = function () {
+            $http.post("/postSelection",{domainName:$scope.ddlDomains, location:$scope.locationsMod, range:$scope.rangeMod})
+            .then(function(response) {
+                $scope.category_data = response.data;
+                console.log(JSON.stringify(response.data));
+            });
+        }
+    });
+
+</script>
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/javascripts/metisMenu.min.js"></script>
 
 
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/javascripts/sb-admin-2.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/javascripts/sb-admin-2.js"></script>
 
 
+<!-- Maps script-->
+  <!--   <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+<script src="https://code.highcharts.com/maps/modules/data.js"></script>
+<script src="https://code.highcharts.com/mapdata/countries/us/us-all.js"></script> -->
 
-
- <!-- Maps script-->
 
 </body>

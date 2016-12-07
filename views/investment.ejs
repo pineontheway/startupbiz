@@ -37,13 +37,13 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+        <![endif]-->
 
-</head>
+    </head>
 
-<body>
- <div id="wrapper">
-<nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <body ng-app="myModule" ng-controller="myController">
+       <div id="wrapper">
+        <nav style="background-color: #47475c;" class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -152,22 +152,21 @@
                         <li>
                             <a href="/dashboard"><i class="fa fa-industry fa-fw"></i> Companies</a>
                         </li>
-                         <li>
+                        <li>
                             <a href="/investment"><i class="fa fa-user-o fa-fw"></i> Investments</a>
                         </li>
-                         <li>
+                        <li>
                             <a href="/acquisition"><i class="fa fa-random fa-fw"></i> Acquisitions</a>
                         </li>
-                         <li>
+                        <li>
                             <a href="/funding"><i class="fa fa-usd fa-fw"></i> Funding Rounds</a>
                         </li>
+                            <li>
+                                <a href="/prediction"><i class="fa fa-user-circle fa-fw"></i> Prediction</a>
+                            </li>
                         <li>
                             <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
                         </li>
-
-
-
-
 
                     </ul>
                 </div>
@@ -178,40 +177,68 @@
         
         <div id="page-wrapper">
           <div class="row">
-                <div class="col-lg-12">
-                    <h4 class="page-header" style="">Analysis of Investments </h4>
-                </div>
-                <!-- /.col-lg-12 -->
+            <div class="col-lg-12">
+                <h4 class="page-header" style="">Analysis of Investments </h4>
             </div>
-              <div class="row">
-                <div class="col-lg-8">
-             <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto" ></div>
-   </div>
-  
-   </div>
-   </div>
-   </div>
-    <!-- /#wrapper -->
+            <!-- /.col-lg-12 -->
+        </div>
+        <div class="row">
+            <div class="col-lg-8">
+               <div id="container" style="width: 650px; height: 450px; margin: 0 auto" ></div>
+               <div id="container2" style="height: 600px; width: 650px; margin: 0 auto"></div>
+           </div>
+           <div class="panel panel-default" style="float: right; width: 300px">
+            <div class="panel-heading" style="background-color:#47475c; color: white">
+                <i class="fa fa-twitter fa-fw" style="color: #1dcaff"></i> Trending News
+            </div>
+            <div class="panel-body">
+                <div class="tw-feed">
+                    <a class="twitter-timeline" href="https://twitter.com/crunchbase‎"
+                    data-link-color="#ccc"
+                    background="#333"
+                    border-radius="none"
+                    data-chrome="nofooter noborders"
+                    data-widget-id="413723523169787904"
+                    data-screen-name="crunchbase" data-show-replies="false"
+                    data-tweet-limit="4"
+                    width="400"
+                    >@Twitter Feed</a>
+                </div>
 
-    <!-- jQuery -->
+            </div>
+            <!-- /.panel-body -->
+        </div>
+    </div>
+    <!-- /.row -->
 
-    <script src="https://code.highcharts.com/highcharts.js"></script>
-    <!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
-    <script>
-    
+</div>
+
+</div>
+
+</div>
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- <script src="https://code.highcharts.com/modules/exporting.js"></script> -->
+<script>
+
     $(function () {
-    Highcharts.chart('container', {
-        chart: {
-            type: 'column'
-        },
-        title: {
-            text: 'Top Investment domains for 2005-15'
-        },
-        subtitle: {
-            text: ''
-        },
-        xAxis: {
-            categories: [
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Top Investment domains for 2005-15'
+            },
+            subtitle: {
+                text: ''
+            },
+            xAxis: {
+                categories: [
                 'Mobile',
                 'Cloud',
                 'Big Data Analytics',
@@ -224,123 +251,145 @@
                 'Finance',
                 'E-commerce',
                 'Food/Hospitality'
-            ],
-            crosshair: true
-        },
-        yAxis: {
-            min: 0,
-            title: {
-                text: 'Number of Investments'
-            }
-        },
-        tooltip: {
-            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                ],
+                crosshair: true
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of Investments'
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+                pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
                 '<td style="padding:0"><b>{point.y:.1f} </b></td></tr>',
-            footerFormat: '</table>',
-            shared: true,
-            useHTML: true
-        },
-        plotOptions: {
-            column: {
-                pointPadding: 0.2,
-                borderWidth: 0
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            plotOptions: {
+                column: {
+                    pointPadding: 0.2,
+                    borderWidth: 0
+                }
+            },
+            series: [{
+                name: 'Angel',
+                data: [ 978, 112, 317, 215, 897, 76, 294, 60, 230, 225, 362, 20]
+
+            }, {
+                name: 'Seed',
+                data: [5891, 643, 2815, 1866, 6307, 637, 2325, 222, 1826, 1674, 2489, 725]
+
+            },  {
+                name: 'Venture',
+                data: [8827, 1761, 5003, 6140, 18268, 2805, 6763, 475, 4354, 2550, 3568, 795]
+
+            }]
+        });
+    });     
+
+    angular.module('myModule', [])
+    .controller('myController', function($scope,$http) {
+        $http.get("/getInv")
+        .then(function(response) {
+            Highcharts.chart('container2', {
+                title: {
+                    text: 'Top Investor Rounds Yearly'
+                },
+                xAxis: {
+                    categories: response.data.inv
+                },
+                labels: {
+                    items: [{
+                        html: 'Total Funding Rounds',
+                        style: {
+                            left: '50px',
+                            top: '18px',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        }
+                    }]
+                },
+                series: [{
+                    type: 'column',
+                    name: '2015',
+                    data: response.data.y2015
+                }, {
+                    type: 'column',
+                    name: '2014',
+                    data: response.data.y2014
+                }, {
+                    type: 'column',
+                    name: '2013',
+                    data: response.data.y2013
+                }, {
+                    type: 'column',
+                    name: '2012',
+                    data: response.data.y2012
+                }, {
+                    type: 'column',
+                    name: '2011',
+                    data: response.data.y2011
+                }, {
+                    type: 'spline',
+                    name: 'Average',
+                    data: response.data.allYear,
+                    marker: {
+                        lineWidth: 2,
+                        lineColor: Highcharts.getOptions().colors[3],
+                        fillColor: 'white'
+                    }
+                }, {
+                    type: 'pie',
+                    name: 'Total Rounds',
+                    data: [{
+                        name: '2015',
+                        y: 1157,
+                color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+                name: '2014',
+                y: 1416,
+                color: Highcharts.getOptions().colors[1] // John's color
+            }, {
+                name: '2013',
+                y: 1217,
+                color: Highcharts.getOptions().colors[2] // John's color
+            }, {
+                name: '2012',
+                y: 1137,
+                color: Highcharts.getOptions().colors[3] // John's color
+            }, {
+                name: '2011',
+                y: 988,
+                color: Highcharts.getOptions().colors[4] // Joe's color
+            }],
+            center: [100, 80],
+            size: 100,
+            showInLegend: false,
+            dataLabels: {
+                enabled: false
             }
-        },
-        series: [{
-            name: 'Angel',
-            data: [ 978, 112, 317, 215, 897, 76, 294, 60, 230, 225, 362, 20]
-
-        }, {
-            name: 'Seed',
-            data: [5891, 643, 2815, 1866, 6307, 637, 2325, 222, 1826, 1674, 2489, 725]
-
-        },  {
-            name: 'Venture',
-            data: [8827, 1761, 5003, 6140, 18268, 2805, 6763, 475, 4354, 2550, 3568, 795]
-
         }]
     });
-});
-    </script>
+        });
 
-    <script>
-    $(function () {
-Highcharts.chart('container2', {
-    chart: {
-        type: 'bar'
-    },
-    title: {
-        text: 'Top Regions by Investment 2015 YTD'
-    },
-    subtitle: {
-        text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
-    },
-    xAxis: {
-        categories: ['SF Bay Area','New York City','Boston','London','Los Angeles','Seattle','Chicago','Austin','San Diego','Washington D.C.','Denver','Salt Lake City','Raleigh','Atlanta','Toronto','Dallas','Baltimore','Philadelphia','Miami','Vancouver','Detroit','Phoenix','St. Louis','Montreal','Bakersfield'],
-        title: {
-            text: null
-        }
-    },
-    yAxis: {
-        min: 0,
-        title: {
-            text: 'Money (millions)',
-            align: 'high'
-        },
-        labels: {
-            overflow: 'justify'
-        }
-    },
-    tooltip: {
-        valueSuffix: ' millions'
-    },
-    plotOptions: {
-        bar: {
-            dataLabels: {
-                enabled: true
-            }
-        }
-    },
-    legend: {
-        layout: 'vertical',
-        align: 'right',
-        verticalAlign: 'top',
-        x: -40,
-        y: 80,
-        floating: true,
-        borderWidth: 1,
-        backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
-        shadow: true
-    },
-    credits: {
-        enabled: false
-    },
-    series: [{
-        name: 'Angel',
-        data: [41311288,15765683,3320000,47302417,2513000,8080495,2005000,4300000,4902495,2378800,1400000,2500000,1597589,10750000,40000000,4904999,1700000,1000000,1141377,750000,1000000,1570750,1800000,3000000,5000000]
-    }, {
-        name: 'Seed',
-        data: [27684982912,7127720128,5722220072,3740724045,2984580107,2672872113,1122539815,988732026,1278382397,1249093300,858676291,1003287385,831537497,811208022,808564399,710470063,658296521,611015964,530412282,411969682,481637201,439835888,420497503,277357500,271957938]
-    }, {
-        name: 'Venture',
-        data: [682819821,314146953,122191793,219788758,159473573,290254394,35635000,65506062,20068790,51168081,49765104,29534233,25420604,19246000,56537307,19765191,12250000,18949622,16153160,17570346,11861556,18034957,16010000,12374470,13620000]
-    }]
-});
-});
-    </script>
+    });
+</script>
+<script>
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+</script>
+<!-- Bootstrap Core JavaScript -->
+<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-
-    <!-- Metis Menu Plugin JavaScript -->
-    <script src="/javascripts/metisMenu.min.js"></script>
+<!-- Metis Menu Plugin JavaScript -->
+<script src="/javascripts/metisMenu.min.js"></script>
 
 
 
-    <!-- Custom Theme JavaScript -->
-    <script src="/javascripts/sb-admin-2.js"></script>
+<!-- Custom Theme JavaScript -->
+<script src="/javascripts/sb-admin-2.js"></script>
 
 </body>
 
