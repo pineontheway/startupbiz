@@ -167,6 +167,9 @@
                                 <a href="/funding"><i class="fa fa-usd fa-fw"></i> Funding Rounds</a>
                             </li>
                             <li>
+                                <a href="/prediction"><i class="fa fa-user-circle fa-fw"></i> Prediction</a>
+                            </li>
+                            <li>
                                 <a href="/people"><i class="fa fa-user-circle fa-fw"></i> People</a>
                             </li>
                         </ul>
@@ -303,69 +306,69 @@
 
 <script>
     angular.module('myModule', [])
-        .controller('myController', function($scope,$http) {
-            $http.get("/getRounds")
-            .then(function(response) {
-        var chart = Highcharts.chart('container', {
+    .controller('myController', function($scope,$http) {
+        $http.get("/getRounds")
+        .then(function(response) {
+            var chart = Highcharts.chart('container', {
 
-            title: {
-                text: 'Top regions by Funding Rounds'
-            },
-
-            subtitle: {
-                text: ''
-            },
-
-            xAxis: {
-                categories: response.data.reg
-            },
-
-            series: [{
-                type: 'column',
-                colorByPoint: true,
-                data: response.data.round,
-                showInLegend: false
-            }]
-
-        });
-
-
-        $('#plain').click(function () {
-            chart.update({
-                chart: {
-                    inverted: false,
-                    polar: false
+                title: {
+                    text: 'Top regions by Funding Rounds'
                 },
+
                 subtitle: {
-                    text: 'Plain'
-                }
+                    text: ''
+                },
+
+                xAxis: {
+                    categories: response.data.reg
+                },
+
+                series: [{
+                    type: 'column',
+                    colorByPoint: true,
+                    data: response.data.round,
+                    showInLegend: false
+                }]
+
+            });
+
+
+            $('#plain').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: false,
+                        polar: false
+                    },
+                    subtitle: {
+                        text: 'Plain'
+                    }
+                });
+            });
+
+            $('#inverted').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: true,
+                        polar: false
+                    },
+                    subtitle: {
+                        text: 'Inverted'
+                    }
+                });
+            });
+
+            $('#polar').click(function () {
+                chart.update({
+                    chart: {
+                        inverted: false,
+                        polar: true
+                    },
+                    subtitle: {
+                        text: 'Polar'
+                    }
+                });
             });
         });
-
-        $('#inverted').click(function () {
-            chart.update({
-                chart: {
-                    inverted: true,
-                    polar: false
-                },
-                subtitle: {
-                    text: 'Inverted'
-                }
-            });
-        });
-
-        $('#polar').click(function () {
-            chart.update({
-                chart: {
-                    inverted: false,
-                    polar: true
-                },
-                subtitle: {
-                    text: 'Polar'
-                }
-            });
-        });
-});
     });
 </script>
 <!-- Maps script-->
