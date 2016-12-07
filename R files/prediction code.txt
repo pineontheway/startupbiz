@@ -1,0 +1,37 @@
+library(taRifx)
+input <- read.csv('C:/Projects/R/data/USAdata.csv',header=T,na.strings=c(""))
+#newpred <- read.csv("./testData.csv", header=TRUE, stringsAsFactors = F)
+#newpred$market = as.factor(newpred$market)
+#newpred$region = as.factor(newpred$region)
+#newpred$founded_year = as.factor(newpred$founded_year)
+input$stateRank = as.factor(input$stateRank)
+input$state_numeric = as.factor(input$state_numeric)
+input$funding_rounds = as.numeric(input$funding_rounds)
+input$funding_total_usd = destring(input$funding_total_usd)
+#ind.year = which(is.na(input$funding_total_usd) == TRUE)
+#input = input[-ind.year,]
+ind.year = which(is.na(input$founded_year) == TRUE | input$founded_year == "")
+#input = input[-ind.year,]
+ind.year = which(input$founded_year < 2015 & input$founded_year > 1995)
+input = input[ind.year,]
+input$founded_year = as.factor(input$founded_year)
+train.data <- input[-which(input$status == "operating"),c(2,4,5,9,11,15,6,7,10,12,16)]
+#test.data <- input[which(input$status == "operating"),c(2,4,5,9,11,15,6,7,10,12,16)]
+train.data$rank[which(train.data$status == "acquired" | train.data$status == "ipo")] = 1
+train.data$rank[which(train.data$status == "closed")] = 0
+
+########logistic regression
+model.logit = glm(input$state_numeric ~ input$stateRank + input$funding_rounds + log(input$funding_total_usd) + input$founded_year, data = input, family = "binomial", na.action = na.omit)
+#ind = which(test.data$market %in% train.data$market == TRUE)
+#test.data = test.data[ind,]
+#ind = which(test.data$region %in% train.data$region == TRUE)
+#test.data = test.data[ind,]
+newpred$rankpred = predict(model.logit,newdata = newpred, type = "response")
+newpred1 = newpred[c(6)]
+write.csv(newpred1, file = "./testDataResult.csv")
+
+
+
+
+
+
