@@ -1,0 +1,18 @@
+$spark-shell -–driver-class-path C:\\Users\HARMIT\DESKTOP\Mysql\mysql-connector-java-5.1.34-bin.jar
+
+scala> val url="jdbc:mysql://localhost:3306/spark"
+
+scala> val prop = new java.util.Properties
+scala> prop.setProperty("user",”harmit”)
+scala> prop.setProperty("password","harmit")
+
+scala> import org apache spark sql sqlcontext
+scala> val companies = sqlContext.read.jdbc(url,"companies",prop)
+
+scala> val USAcompanies = people.filter(companies("country_code") == "USA")
+scala> USAcompanies.write.jdbc(url,"USAcompanies",prop)
+
+scala> val CAcities = companies.groupBy("CA")
+scala> CAcities.write.jdbc(url,"CAcities",prop)
+
+
