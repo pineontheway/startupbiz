@@ -15,4 +15,6 @@
 10. Start server from command line in cloned folder by command "npm start"
 11. Open Google chrome browser and type "localhost:3000"
 
-
+## Video WalkThrough
+Here's a walkthrough of implemented user stories:
+![img]http://i.imgur.com/R7wep5p.gif[/img]
